@@ -6,7 +6,7 @@ import { COLLABORATE_TEXT, GITHUB_LINK, IMG_TITLE } from "@/constants/texts";
 const Collaborate = () => {
   return (
     <section id="collaborate">
-      <img id="general_cat" src="/general_cat.webp" alt={IMG_TITLE} title={IMG_TITLE} />
+      <img id="general_cat" src="/images/general_cat.webp" alt={IMG_TITLE} title={IMG_TITLE} />
       <h2>Want to collaborate?</h2>
       <p>{COLLABORATE_TEXT}</p>
       <p>

@@ -44,7 +44,7 @@ const AboutMe = () => {
             </a>
           </div>
         </div>
-        <img id="general_cat" src="/general_cat.webp" alt={IMG_TITLE} title={IMG_TITLE} />
+        <img id="general_cat" src="/images/general_cat.webp" alt={IMG_TITLE} title={IMG_TITLE} />
       </section>
       <Techstack />
       <section id="highlights" aria-labelledby="highlights-header">
