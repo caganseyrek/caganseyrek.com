@@ -1,7 +1,7 @@
 :root {
   --color-1: #1f1f1f;
   --color-2: #282828;
-  --color-3: #555555;
+  --color-3: #383838;
   --color-4: #aaaaaa;
   --color-5: #eeeeee;
 
@@ -44,7 +44,7 @@ body {
 body.light-theme {
   --color-1: #eeeeee;
   --color-2: #e3e3e3;
-  --color-3: #aaaaaa;
+  --color-3: #d0d0d0;
   --color-4: #666666;
   --color-5: #1f1f1f;
   --selection-color: #d16b1d;
@@ -265,48 +265,42 @@ section#highlights div#highlights-content {
 }
 
 section#highlights div#highlights-content div.highlighted-project {
+  background-color: var(--color-2);
   border-radius: var(--border-radius-2);
+  padding: var(--padding);
+  box-sizing: border-box;
   width: 385px;
   display: flex;
   align-self: stretch;
   flex-direction: column;
   flex: 1;
+  row-gap: var(--vertical-spacing-2);
 }
 
-section#highlights div#highlights-content div.highlighted-project a.project-title {
+section#highlights div#highlights-content div.highlighted-project a {
   background-color: var(--color-2);
-  padding: var(--padding);
-  box-sizing: border-box;
-  border-top-left-radius: var(--border-radius-2);
-  border-top-right-radius: var(--border-radius-2);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+  column-gap: 10px;
   font-weight: bold;
   color: var(--color-5);
   text-decoration: none;
 }
 
-section#highlights div#highlights-content div.highlighted-project div.project-details {
-  border: solid 2px var(--color-2);
-  padding: var(--padding);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--vertical-spacing-2);
-  border-bottom-left-radius: var(--border-radius-2);
-  border-bottom-right-radius: var(--border-radius-2);
-  flex: 1;
+section#highlights div#highlights-content div.highlighted-project a svg {
+  width: 20px;
+  height: 20px;
 }
 
-section#highlights div#highlights-content div.highlighted-project div.project-details p {
+section#highlights div#highlights-content div.highlighted-project p {
   flex: 1;
   margin: 0;
   padding: 0;
   color: var(--color-4);
 }
 
-section#highlights div#highlights-content div.highlighted-project div.project-details div {
+section#highlights div#highlights-content div.highlighted-project div {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -315,8 +309,8 @@ section#highlights div#highlights-content div.highlighted-project div.project-de
   color: var(--color-4);
 }
 
-section#highlights div#highlights-content div.highlighted-project div.project-details div span {
-  background-color: var(--color-2);
+section#highlights div#highlights-content div.highlighted-project div span {
+  background-color: var(--color-1);
   padding: 5px 10px;
   box-sizing: border-box;
   border-radius: var(--border-radius-1);
@@ -333,10 +327,6 @@ section#collaborate {
   row-gap: var(--vertical-spacing-2);
   margin-top: var(--vertical-spacing-3);
   margin-bottom: var(--vertical-spacing-3);
-}
-
-section#collaborate img#general_cat {
-  border-radius: 100%;
 }
 
 section#collaborate h2 {

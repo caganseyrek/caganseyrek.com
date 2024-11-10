@@ -3,7 +3,9 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { BrowserRouter, Routes as BrowserRoutes, Link, Route } from "react-router-dom";
 
-import { Collaborate, Highlights, Introduction, ReRoute, Techstack } from "./components";
+import { AboutMe, Collaborate } from "./routes";
+
+import ReRoute from "./components/ReRoute";
 
 import { HEAD_TAGS } from "./constants/texts";
 
@@ -47,17 +49,7 @@ const App = () => {
           </nav>
         </header>
         <BrowserRoutes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Introduction />
-                <Techstack />
-                <Highlights />
-              </>
-            }
-            errorElement={<ReRoute />}
-          />
+          <Route path="/" element={<AboutMe />} errorElement={<ReRoute />} />
           <Route path="/collaborate" element={<Collaborate />} errorElement={<ReRoute />} />
           <Route path="*" element={<ReRoute />} />
         </BrowserRoutes>
