@@ -14,6 +14,16 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), fullscreen=*"
 
 [[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+
+[[headers]]
   for = "/static/*"
   [headers.values]
     Cache-Control = "public, max-age=604800, immutable"
+
+[[headers]]
+  for = "https://fonts.googleapis.com/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
