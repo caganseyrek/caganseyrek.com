@@ -12,13 +12,6 @@ front-end, back-end, and database development to bring your ideas to life. If yo
 for someone to collaborate on a project, I’d love to talk about it!
 `;
 
-export const HEAD_TAGS = {
-  AUTHOR: "Çağan Seyrek",
-  DESCRIPTION:
-    "4th-year computer engineering student who loves full-stack web development and the open-source.",
-  KEYWORDS: "personal website, portfolio, computer engineer, software engineer",
-};
-
 export const TECHSTACK_LABELS = {
   HEADER: {
     SEE: "See",
@@ -30,8 +23,14 @@ export const TECHSTACK_LABELS = {
   DEVTOOLS: "Dev Tools",
 };
 
+export const HEAD_TAGS = {
+  AUTHOR: "Çağan Seyrek",
+  KEYWORDS: "personal website, portfolio, computer engineer, software engineer",
+};
+
 export const IMG_TITLE: string = "My dear profile picture";
 
+export const SITE_LINK: string = "https://caganseyrek.com/";
 export const GITHUB_LINK: string = "https://github.com/caganseyrek";
 export const NPMJS_LINK: string = "https://www.npmjs.com/~caganseyrek";
 export const LINKEDIN_LINK: string = "https://www.linkedin.com/in/caganseyrek/";

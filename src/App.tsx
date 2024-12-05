@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { BrowserRouter, Routes as BrowserRoutes, Link, Route } from "react-router-dom";
+import { BrowserRouter, Routes as BrowserRoutes, Route } from "react-router-dom";
 
 import { AboutMe, Collaborate } from "./routes";
 
+import LinkElement from "./components/LinkElement";
 import ReRoute from "./components/ReRoute";
 
 import { HEAD_TAGS } from "./constants/texts";
@@ -34,6 +35,7 @@ const App = () => {
           <meta name="author" content={HEAD_TAGS.AUTHOR} />
           <meta name="description" content={HEAD_TAGS.DESCRIPTION} />
           <meta name="keywords" content={HEAD_TAGS.KEYWORDS} />
+          <meta name="theme-color" content={isDarkMode ? "#282828" : "#e3e3e3"} />
         </Helmet>
         <header>
           <button
@@ -43,16 +45,18 @@ const App = () => {
             {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
           </button>
           <nav>
-            <Link to="/">About Me</Link>
+            <LinkElement to="/" contents="About Me" />
             <div className="nav-divider">/</div>
-            <Link to="/collaborate">Collaborate</Link>
+            <LinkElement to="/collaborate" contents="Collaborate" />
           </nav>
         </header>
-        <BrowserRoutes>
-          <Route path="/" element={<AboutMe />} errorElement={<ReRoute />} />
-          <Route path="/collaborate" element={<Collaborate />} errorElement={<ReRoute />} />
-          <Route path="*" element={<ReRoute />} />
-        </BrowserRoutes>
+        <main>
+          <BrowserRoutes>
+            <Route path="/" element={<AboutMe />} errorElement={<ReRoute />} />
+            <Route path="/collaborate" element={<Collaborate />} errorElement={<ReRoute />} />
+            <Route path="*" element={<ReRoute />} />
+          </BrowserRoutes>
+        </main>
       </BrowserRouter>
     </HelmetProvider>
   );

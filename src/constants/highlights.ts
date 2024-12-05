@@ -1,12 +1,4 @@
-interface ProjectsHighlightProps {
-  key: string | number;
-  title: string;
-  description: string;
-  source_url: string;
-  tags: string[];
-}
-
-export const HIGHLIGTED_PROJECTS: ProjectsHighlightProps[] = [
+export const HighlightsList: ProjectsHighlightsListProps[] = [
   {
     key: "wallettuner",
     title: "WalletTuner",
@@ -15,24 +7,24 @@ export const HIGHLIGTED_PROJECTS: ProjectsHighlightProps[] = [
     tags: ["react", "express", "typescript"],
   },
   {
-    key: "jumpstart",
-    title: "Jumpstart",
-    description: "Starter projects to kickstart development",
-    source_url: "https://github.com/caganseyrek/Jumpstart",
-    tags: ["react", "express", "fastapi"],
+    key: "flightcoordinator",
+    title: "FlightCoordinator",
+    description: "Automated flight manager app",
+    source_url: "https://github.com/FlightCoordinator/FlightCoordinator",
+    tags: ["springboot", "react", "python"],
   },
   {
     key: "easyrequester",
     title: "EasyRequester",
     description: "A custom and flexible HTTP requester",
     source_url: "https://github.com/caganseyrek/EasyRequester",
-    tags: ["typescript", "axios"],
+    tags: ["typescript", "axios", "npm"],
   },
   {
     key: "quicktoc",
     title: "QuickTOC",
     description: "Automatic table of contents generator",
     source_url: "https://github.com/caganseyrek/QuickTOC",
-    tags: ["typescript"],
+    tags: ["typescript", "npm"],
   },
 ];

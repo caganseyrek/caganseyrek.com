@@ -1,0 +1,47 @@
+@import url("./globals.css");
+
+section#collaborate {
+  width: 780px;
+  margin: auto;
+  color: var(--color-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: var(--vertical-spacing-2);
+  margin-top: var(--vertical-spacing-3);
+  margin-bottom: var(--vertical-spacing-3);
+}
+
+section#collaborate h2 {
+  color: var(--color-5);
+  padding: 0;
+  margin: 0;
+}
+
+section#collaborate p {
+  margin: 0;
+  padding: 0 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+section#collaborate p a {
+  color: var(--color-5);
+  text-decoration: none;
+}
+
+section#collaborate a#contact-linkedin {
+  background-color: var(--color-2);
+  color: var(--color-5);
+  text-decoration: none;
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 7px;
+  padding: 10px var(--padding);
+  box-sizing: border-box;
+  border-radius: var(--border-radius-2);
+}

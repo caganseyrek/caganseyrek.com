@@ -24,8 +24,3 @@ dist-ssr
 *.sw?
 
 .env
-src/components/BlogPost.tsx
-src/components/BlogPostsList.tsx
-src/routes/Blog.tsx
-public/posts
-public/blog_404.md
