@@ -1,17 +1,17 @@
 export const HighlightsList: ProjectsHighlightsListProps[] = [
   {
-    key: "wallettuner",
-    title: "WalletTuner",
-    description: "Flexible personal finance tracking app",
-    source_url: "https://github.com/caganseyrek/WalletTuner",
-    tags: ["react", "express", "typescript"],
-  },
-  {
     key: "flightcoordinator",
     title: "FlightCoordinator",
     description: "Automated flight manager app",
     source_url: "https://github.com/FlightCoordinator/FlightCoordinator",
     tags: ["springboot", "react", "python"],
+  },
+  {
+    key: "wallettuner",
+    title: "WalletTuner",
+    description: "Flexible personal finance tracking app",
+    source_url: "https://github.com/caganseyrek/WalletTuner",
+    tags: ["react", "express", "typescript"],
   },
   {
     key: "easyrequester",
