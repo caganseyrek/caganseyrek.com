@@ -1,10 +1,9 @@
 import React from "react";
 
-import Image from "next/image";
-
 const ProfilePicture = () => {
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src="/images/general_cat.png"
       width="178"
       height="178"
