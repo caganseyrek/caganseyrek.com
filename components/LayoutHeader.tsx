@@ -12,7 +12,7 @@ const LayoutHeader = () => {
 
   return (
     <header className="w-[780px] m-auto p-[15px] box-content flex items-center justify-between bg-accent border border-t-0 rounded-b-lg">
-      <h2 className="text-xl font-semibold tracking-tighter">Çağan Seyrek</h2>
+      <h2 className="text-[1.3rem] font-semibold tracking-tighter text-muted-foreground">Çağan Seyrek</h2>
       <nav className="flex flex-row gap-x-[7px]">
         <Button
           variant="outline"

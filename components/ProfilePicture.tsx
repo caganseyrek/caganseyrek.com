@@ -4,7 +4,7 @@ const ProfilePicture = () => {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/images/general_cat.png"
+      src="/images/general_cat.webp"
       width="178"
       height="178"
       alt="My Profile Picture"
