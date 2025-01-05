@@ -7,6 +7,6 @@
   package = "@netlify/plugin-nextjs"
 
 [[headers]]
-  for = "/assets/*"
+  for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=604800, immutable"

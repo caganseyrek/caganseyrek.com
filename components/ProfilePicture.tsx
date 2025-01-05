@@ -5,7 +5,7 @@ import Image from "next/image";
 const ProfilePicture = () => {
   return (
     <Image
-      src="/public/images/general_cat.png"
+      src="/images/general_cat.png"
       width="178"
       height="178"
       alt="My Profile Picture"
