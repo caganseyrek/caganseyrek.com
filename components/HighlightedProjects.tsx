@@ -12,10 +12,11 @@ const HighlightedProjects = () => {
       <h3 className="text-lg font-bold tracking-tight m-0 p-0 pb-[10px] text-center">Highlighted Projects</h3>
       <div className="flex flex-row flex-wrap gap-[10px]">
         {allProjectsArray.map((project) => (
-          <div
-            key={project.key}
-            className="bg-accent w-[385px] p-[15px] border rounded-lg flex flex-col gap-y-[10px]">
-            <Link href={project.urls.repository_path} className="text-md font-semibold flex flex-row gap-x-[7px]">
+          <div key={project.key} className="bg-accent w-[385px] p-[15px] border rounded-lg flex flex-col gap-y-[10px]">
+            <Link
+              href={project.urls.repository_path}
+              target="_blank"
+              className="text-md font-semibold flex flex-row gap-x-[7px]">
               {project.title}
               <ExternalLink className="h-[18px] w-[18px]" />
             </Link>

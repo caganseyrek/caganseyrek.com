@@ -6,7 +6,6 @@ import { Calendar, Clock, ExternalLink } from "lucide-react";
 
 import { getArticles, type GetManyParams } from "@/utils/articleUtils";
 import getReadingTime from "@/utils/getReadingTime";
-import { stringifyTag } from "@/utils/tagUtils";
 
 const HighlightedArticles = () => {
   const articles: GetManyParams = getArticles();
@@ -42,12 +41,11 @@ const HighlightedArticles = () => {
                         <div className="text-base">{article.metadata.preview_content}</div>
                         <div className="flex flex-row gap-x-[5px] gap-y-[5px]">
                           {article.metadata.tags.map((tag) => (
-                            <Link
+                            <span
                               key={tag}
-                              href={`/blog/tag/${stringifyTag(tag)}`}
                               className="border bg-background text-muted-foreground rounded-sm px-[7px] py-[3px] text-sm font-medium">
                               {tag}
-                            </Link>
+                            </span>
                           ))}
                         </div>
                       </div>

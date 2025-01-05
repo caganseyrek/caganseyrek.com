@@ -23,11 +23,11 @@ const CollaboratePage = () => {
       </div>
       <div className="w-[640px] text-center text-muted-foreground">
         You can see some highlights of my work on the{" "}
-        <Link href="/" className="hover:text-foreground transition-colors">
+        <Link href="/" target="_blank" className="hover:text-foreground transition-colors">
           About page
         </Link>
         , or on{" "}
-        <Link href={links.GITHUB} className="hover:text-foreground transition-colors">
+        <Link href={links.GITHUB} target="_blank" className="hover:text-foreground transition-colors">
           my GitHub page
         </Link>
         .
