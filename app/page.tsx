@@ -12,13 +12,11 @@ import Techstack from "@/components/Techstack";
 
 import links from "@/data/links";
 
-export const ABOUT_ME_TEXTS = {
+export const metadata: Metadata = { title: "About Me" };
+
+const ABOUT_ME_TEXTS = {
   TITLE: "Hey, I'm Çağan",
   DESC: "I'm a senior year computer engineering student passionate about software development, and open-source way of collaborating and improving tech together for everyone. I enjoy working with various languages and frameworks to create all sorts of projects.",
-};
-
-export const metadata: Metadata = {
-  title: "About Me - Çağan Seyrek",
 };
 
 const AboutMe = () => {

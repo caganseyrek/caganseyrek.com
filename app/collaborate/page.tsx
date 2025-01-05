@@ -9,9 +9,7 @@ import { Button } from "@/components/ui/button";
 
 import links from "@/data/links";
 
-export const metadata: Metadata = {
-  title: "Collaborate - Çağan Seyrek",
-};
+export const metadata: Metadata = { title: "Collaborate" };
 
 const CollaboratePage = () => {
   return (

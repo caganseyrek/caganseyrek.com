@@ -1,10 +1,12 @@
-import { MetadataRoute } from "next";
+import { type MetadataRoute } from "next";
+
+import { metadataTexts } from "@/data/metadata";
 
 function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Cagan Seyrek's Portfolio",
-    short_name: "Cagan's Portfolio",
-    description: "Senior year computer engineering student who loves full-stack web development and the open-source.",
+    name: metadataTexts.title,
+    short_name: metadataTexts.title,
+    description: metadataTexts.desc,
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

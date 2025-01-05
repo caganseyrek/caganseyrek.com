@@ -7,20 +7,20 @@ import { Metadata } from "next";
 import remarkGfm from "remark-gfm";
 
 import { getArticleBySlug } from "@/utils/articleUtils";
+import { parseTag as parseSlug } from "@/utils/tagUtils";
 
 interface PageParams {
   params: Promise<{ slug: string }>;
 }
 
-export const metadata: Metadata = {
-  title: "",
-};
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  const awaitedSlug = (await params).slug;
+  return { title: parseSlug(awaitedSlug) };
+}
 
 const ArticlePage = async ({ params }: PageParams) => {
   const awaitedSlug = (await params).slug;
   const { content } = getArticleBySlug(awaitedSlug);
-
-  metadata.title = "";
 
   return (
     <article>

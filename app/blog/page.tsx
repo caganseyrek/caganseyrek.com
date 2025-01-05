@@ -11,9 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import { getArticles, type GetManyParams } from "@/utils/articleUtils";
 import getReadingTime from "@/utils/getReadingTime";
 
-export const metadata: Metadata = {
-  title: "Blog - Çağan Seyrek",
-};
+export const metadata: Metadata = { title: "Blog" };
 
 const BlogPage = () => {
   const articles: GetManyParams = getArticles();

@@ -114,12 +114,10 @@ const techstackList: TechstackListProps[] = [
 const Techstack = () => {
   return (
     <section>
-      <Accordion key={"accordiond-1"} type="single" collapsible className="w-full bg-accent border rounded-lg">
-        <AccordionItem key="accordion-item-1" value="item-1" className="border-0">
-          <AccordionTrigger key="accordion-trigger-1" className="p-[15px] text-md font-semibold">
-            Toggle my Techstack
-          </AccordionTrigger>
-          <AccordionContent key="accordion-content-1" className="bg-background pb-0 rounded-b-lg">
+      <Accordion type="single" collapsible className="w-full bg-accent border rounded-lg">
+        <AccordionItem value="item-1" className="border-0">
+          <AccordionTrigger className="p-[15px] text-md font-semibold">Toggle my Techstack</AccordionTrigger>
+          <AccordionContent className="bg-background pb-0 rounded-b-lg">
             {techstackList.map((category) => (
               <React.Fragment key={category.key}>
                 <Separator orientation="horizontal" decorative />
