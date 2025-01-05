@@ -91,7 +91,6 @@ const config: Config = {
       },
     },
   },
-  important: true,
   plugins: [tailwindAnimatePlugin],
 };
 
