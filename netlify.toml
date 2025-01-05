@@ -3,12 +3,10 @@
   to = "/index.html"
   status = 200
 
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=604800, immutable"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [[headers]]
-  for = "/static/*"
+  for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=604800, immutable"

@@ -1,1 +1,1 @@
-pnpm lint-staged
+prettier --write && pnpm lint
