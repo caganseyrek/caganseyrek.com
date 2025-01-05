@@ -15,6 +15,14 @@ export const metadataTexts: MetadataTextsParams = {
 };
 
 export const metadataObject: Metadata = {
+  description: metadataTexts.desc,
+  authors: [{ name: "Çağan Seyrek" }],
+  keywords: ["full-stack developer", "software engineer", "software developer", "computer engineer", "portfolio"],
+  robots: {
+    index: true,
+    follow: true,
+    noimageindex: true,
+  },
   openGraph: {
     type: "website",
     title: metadataTexts.title,
