@@ -14,36 +14,34 @@ const HighlightedArticles = () => {
     <>
       {articles.length > 0 && (
         <section>
-          <h3 className="text-lg font-bold tracking-tight m-0 p-0 pb-[10px] text-center">Highlighted Articles</h3>
-          <div className="flex flex-row flex-wrap gap-[10px]">
+          <h3 className="highlighted-section-title">Highlighted Articles</h3>
+          <div className="highlighted-articles-grid">
             {articles.length > 0 &&
               articles.map(
                 (article) =>
                   article.metadata.is_highlighted && (
                     <React.Fragment key={article.slug}>
-                      <div className="flex flex-col gap-y-[10px] border bg-accent p-[15px] rounded-lg w-[100%]">
-                        <Link
-                          href={`/blog/${article.slug}`}
-                          className="flex flex-row items-center justify-start w-fit gap-x-[10px]">
-                          <h2 className="text-md font-semibold tracking-tight m-0 p-0">{article.metadata.title}</h2>
-                          <ExternalLink className="h-[18px] w-[18px]" />
-                        </Link>
-                        <div className="flex flex-row gap-x-[15px] text-muted-foreground text-sm">
-                          <span className="flex flex-row items-center justify-center gap-x-[5px]">
-                            <Calendar className="h-[14px] w-[14px]" />
-                            {article.metadata.created_at}
-                          </span>
-                          <span className="flex flex-row items-center justify-center gap-x-[5px]">
-                            <Clock className="h-[14px] w-[14px]" />
-                            {getReadingTime(article.metadata.word_count)}
-                          </span>
+                      <div className="highlighted-article-container">
+                        <div className="article-header">
+                          <Link href={`/blog/${article.slug}`} className="article-link">
+                            <h2 className="article-link-text ">{article.metadata.title}</h2>
+                            <ExternalLink className="icon-18x18" />
+                          </Link>
+                          <div className="article-metadata-container">
+                            <span className="article-metadata-item">
+                              <Calendar className="icon-14x14" />
+                              {article.metadata.created_at}
+                            </span>
+                            <span className="article-metadata-item">
+                              <Clock className="icon-14x14" />
+                              {getReadingTime(article.metadata.word_count)}
+                            </span>
+                          </div>
                         </div>
-                        <div className="text-base">{article.metadata.preview_content}</div>
-                        <div className="flex flex-row gap-x-[5px] gap-y-[5px]">
+                        <div className="text-muted-foreground">{article.metadata.preview_content}</div>
+                        <div className="tags-container">
                           {article.metadata.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="border bg-background text-muted-foreground rounded-sm px-[7px] py-[3px] text-sm font-medium">
+                            <span key={tag} className="highlighted-tag">
                               {tag}
                             </span>
                           ))}

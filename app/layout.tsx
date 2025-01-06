@@ -24,11 +24,16 @@ const MainLayout = ({ children }: LayoutProps) => {
     <html>
       <head>
         <link rel="icon" href="/images/favicon.png" sizes="any" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
       </head>
-      <body className="bg-background min-w-[400px] text-[16px] m-0 p-0">
+      <body>
         <LayoutHeader />
-        <main className="w-[780px] m-auto my-[30px] flex flex-col gap-y-[30px]">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );

@@ -13,21 +13,21 @@ export const metadata: Metadata = { title: "Collaborate" };
 
 const CollaboratePage = () => {
   return (
-    <div className="flex flex-col items-center justify-start gap-y-[15px]">
+    <section className="collaborate-section">
       <ProfilePicture />
-      <h1 className="text-2xl font-bold tracking-tight m-0 p-0">Want to Collaborate?</h1>
-      <div className="w-[640px] text-center text-muted-foreground">
+      <h1>Want to Collaborate?</h1>
+      <div>
         I specialize in crafting responsive, user-focused web applications with expertise in front-end, back-end, and
         database development to bring your ideas to life. If you’re looking for someone to collaborate on a project, I’d
         love to talk about it!
       </div>
-      <div className="w-[640px] text-center text-muted-foreground">
+      <div>
         You can see some highlights of my work on the{" "}
-        <Link href="/" target="_blank" className="hover:text-foreground transition-colors">
+        <Link href="/" target="_blank" className="collaborate-link">
           About page
         </Link>
         , or on{" "}
-        <Link href={links.GITHUB} target="_blank" className="hover:text-foreground transition-colors">
+        <Link href={links.GITHUB} target="_blank" className="collaborate-link">
           my GitHub page
         </Link>
         .
@@ -36,11 +36,11 @@ const CollaboratePage = () => {
         <Link
           href="https://www.linkedin.com/services/page/4548aa324845553b6b/"
           target="_blank"
-          className="flex flex-row items-center justify-center gap-x-[7px]">
+          className="collaborate-button-text">
           Contact Me on <SiLinkedin />
         </Link>
       </Button>
-    </div>
+    </section>
   );
 };
 

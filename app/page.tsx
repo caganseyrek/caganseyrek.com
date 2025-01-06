@@ -22,19 +22,19 @@ const ABOUT_ME_TEXTS = {
 const AboutMe = () => {
   return (
     <>
-      <section className="flex items-center justify-between flex-row">
-        <div className="flex flex-col gap-y-[15px]">
-          <h1 className="text-2xl font-bold tracking-tight m-0 p-0">{ABOUT_ME_TEXTS.TITLE}</h1>
-          <p className=" w-[566px] p-0 m-0 text-muted-foreground">{ABOUT_ME_TEXTS.DESC}</p>
-          <div className="w-[566px] flex items-center justify-start gap-x-[7px]">
+      <section className="about-me-section">
+        <div>
+          <h1>{ABOUT_ME_TEXTS.TITLE}</h1>
+          <p>{ABOUT_ME_TEXTS.DESC}</p>
+          <div>
             <Link href={links.GITHUB} target="_blank">
-              <SiGithub className="w-[20px] h-[20px]" />
+              <SiGithub className="icon-20x20" />
             </Link>
             <Link href={links.NPM} target="_blank">
-              <SiNpm className="w-[20px] h-[20px]" />
+              <SiNpm className="icon-20x20" />
             </Link>
             <Link href={links.LINKEDIN} target="_blank">
-              <SiLinkedin className="w-[20px] h-[20px]" />
+              <SiLinkedin className="icon-20x20" />
             </Link>
           </div>
         </div>

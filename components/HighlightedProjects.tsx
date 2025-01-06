@@ -9,23 +9,18 @@ import allProjectsArray from "@/data/projects";
 const HighlightedProjects = () => {
   return (
     <section>
-      <h3 className="text-lg font-bold tracking-tight m-0 p-0 pb-[10px] text-center">Highlighted Projects</h3>
-      <div className="flex flex-row flex-wrap gap-[10px]">
+      <h3 className="highlighted-section-title">Highlighted Projects</h3>
+      <div className="highlighted-projects-grid">
         {allProjectsArray.map((project) => (
-          <div key={project.key} className="bg-accent w-[385px] p-[15px] border rounded-lg flex flex-col gap-y-[10px]">
-            <Link
-              href={project.urls.repository_path}
-              target="_blank"
-              className="text-md font-semibold flex flex-row gap-x-[7px]">
+          <div key={project.key} className="highlighted-project-container">
+            <Link href={project.urls.repository_path} target="_blank" className="highlighted-project-title">
               {project.title}
-              <ExternalLink className="h-[18px] w-[18px]" />
+              <ExternalLink className="icon-18x18" />
             </Link>
-            <div className="text-muted-foreground">{project.description}</div>
-            <div className="flex flex-row gap-[5px]">
+            <div className="text-muted-foreground flex-1">{project.description}</div>
+            <div className="tags-container">
               {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="py-[5px] px-[7px] inline-block bg-background border rounded-sm text-sm font-medium text-muted-foreground">
+                <span key={tag} className="highlighted-tag">
                   {tag}
                 </span>
               ))}

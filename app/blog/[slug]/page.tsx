@@ -32,15 +32,23 @@ const ArticlePage = async ({ params }: PageParams) => {
             const { children, className, node, ...rest } = props;
 
             let label: string = "";
-            const blockMatch: RegExpMatchArray | null = String(children).match(/^label:([^\n]+)\n/);
+            const blockMatch: RegExpMatchArray | null = String(className).match(/-label:([^\n]+)/);
             if (blockMatch) {
               label = blockMatch[1];
             }
 
             const match = /language-(\w+)/.exec(className || "");
+            console.log("match");
+            console.log(match);
+            console.log("className");
+            console.log(className);
             return match ? (
               <>
-                {label && <div className="codeblock-header">{label}</div>}
+                {
+                  <div className="codeblock-header-background">
+                    <div className="codeblock-header">{label}</div>
+                  </div>
+                }
                 <SyntaxHighlighter
                   {...rest}
                   showLineNumbers

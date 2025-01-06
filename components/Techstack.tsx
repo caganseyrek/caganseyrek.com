@@ -114,20 +114,18 @@ const techstackList: TechstackListProps[] = [
 const Techstack = () => {
   return (
     <section>
-      <Accordion type="single" collapsible className="w-full bg-accent border rounded-lg">
+      <Accordion type="single" collapsible className="accordion">
         <AccordionItem value="item-1" className="border-0">
-          <AccordionTrigger className="p-[15px] text-md font-semibold">Toggle my Techstack</AccordionTrigger>
-          <AccordionContent className="bg-background pb-0 rounded-b-lg">
+          <AccordionTrigger className="accordion-trigger">Toggle my Techstack</AccordionTrigger>
+          <AccordionContent className="accordion-content">
             {techstackList.map((category) => (
               <React.Fragment key={category.key}>
                 <Separator orientation="horizontal" decorative />
-                <div className="w-[100%] flex flex-col justify-start items-start gap-y-[5px] p-[15px]">
-                  <h3 className="text-base font-semibold tracking-tight">{category.label}</h3>
-                  <div className="flex items-start justify-start flex-row flex-wrap gap-x-[5px] gap-y-[5px]">
+                <div className="techstack-section-container">
+                  <h3 className="techstack-section-title">{category.label}</h3>
+                  <div className="techstack-section-items-container">
                     {category.list.map((item) => (
-                      <div
-                        key={item.key}
-                        className="bg-accent py-[5px] px-[7px] gap-x-[5px] flex items-center justify-center rounded-sm text-muted-foreground border text-sm font-medium hover:text-foreground transition-colors">
+                      <div key={item.key} className="techstack-section-item">
                         {item.icon}
                         {item.label}
                       </div>

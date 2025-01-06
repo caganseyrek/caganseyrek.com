@@ -17,36 +17,34 @@ const BlogPage = () => {
   const articles: GetManyParams = getArticles();
 
   return (
-    <section>
-      <h3 className="text-xl font-bold tracking-tight m-0 p-0 pb-[15px] text-center">Blog</h3>
-      <div className="flex flex-row flex-wrap gap-[10px]">
+    <section className="blog-section">
+      <h3>Blog</h3>
+      <div className="articles-container">
         {articles.length > 0 ? (
           articles.map((article) => (
             <React.Fragment key={article.slug}>
-              <Separator decorative className="mb-[15px] [&:not(:first-child)]:mt-[15px]" />
-              <div className="flex flex-col gap-y-[10px]">
-                <div className="flex flex-col gap-y-[5px]">
-                  <Link
-                    href={`/blog/${article.slug}`}
-                    className="flex flex-row items-center justify-start w-fit gap-x-[10px]">
-                    <h2 className="text-md font-semibold tracking-tight m-0 p-0">{article.metadata.title}</h2>
-                    <ExternalLink className="h-[18px] w-[18px]" />
+              <Separator decorative className="articles-separator" />
+              <div className="article-container">
+                <div className="article-header">
+                  <Link href={`/blog/${article.slug}`} className="article-link">
+                    <h2 className="article-link-text">{article.metadata.title}</h2>
+                    <ExternalLink className="icon-18x18" />
                   </Link>
-                  <div className="flex flex-row gap-x-[15px] text-muted-foreground text-sm">
-                    <span className="flex flex-row items-center justify-center gap-x-[5px]">
-                      <Calendar className="h-[14px] w-[14px]" />
+                  <div className="article-metadata-container">
+                    <span className="article-metadata-item">
+                      <Calendar className="icon-14x14" />
                       {article.metadata.created_at}
                     </span>
-                    <span className="flex flex-row items-center justify-center gap-x-[5px]">
-                      <Clock className="h-[14px] w-[14px]" />
+                    <span className="article-metadata-item">
+                      <Clock className="icon-14x14" />
                       {getReadingTime(article.metadata.word_count)}
                     </span>
                   </div>
                 </div>
                 <div className="text-base text-muted-foreground">{article.metadata.preview_content}</div>
-                <div className="flex flex-row gap-x-[5px] gap-y-[5px]">
+                <div className="tags-container">
                   {article.metadata.tags.map((tag) => (
-                    <span key={tag} className="border bg-accent rounded-sm px-[7px] py-[3px] text-sm font-medium">
+                    <span key={tag} className="tag">
                       {tag}
                     </span>
                   ))}
