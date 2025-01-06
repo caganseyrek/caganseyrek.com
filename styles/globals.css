@@ -101,7 +101,7 @@
     @apply flex flex-row gap-x-[7px] max-[570px]:hidden;
   }
   header nav.mobile-nav {
-    @apply hidden max-[570px]:flex peer-[aria-expanded="true"]:flex;
+    @apply hidden max-[570px]:flex;
   }
   header nav.mobile-nav .mobile-nav-btn {
     @apply rounded-sm hover:bg-background hidden max-[570px]:flex;
@@ -147,21 +147,6 @@
   }
   .empty-blog-container {
     @apply border p-[15px] bg-accent rounded-lg w-[100%] text-center text-muted-foreground;
-  }
-  .not-found-wrapper {
-    @apply w-[100%] flex items-center justify-center;
-  }
-  .not-found-container {
-    @apply py-[30px] w-fit text-muted-foreground flex flex-col items-center justify-center gap-y-[15px];
-  }
-  .not-found-icon {
-    @apply text-foreground w-[34px] h-[34px];
-  }
-  .not-found-text-container {
-    @apply flex flex-col items-center justify-center gap-y-[5px];
-  }
-  .not-found-text-container h3 {
-    @apply text-xl font-semibold text-foreground;
   }
   .about-me-section {
     @apply flex items-start justify-between flex-row max-[670px]:flex-col-reverse max-[670px]:gap-[15px] max-[670px]:items-center max-[670px]:justify-center;

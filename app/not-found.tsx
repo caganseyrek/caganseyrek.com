@@ -11,11 +11,11 @@ export const metadata: Metadata = { title: "Not Found" };
 
 const NotFoundPage = () => {
   return (
-    <div className="not-found-wrapper">
-      <div className="not-found-contnainer">
-        <Origami className="not-found-icon" />
-        <div className="not-found-text-container">
-          <h3>Oops..</h3>
+    <div className="w-[100%] flex items-center justify-center">
+      <div className="py-[30px] w-fit text-muted-foreground flex flex-col items-center justify-center gap-y-[15px]">
+        <Origami className="text-foreground w-[34px] h-[34px]" />
+        <div className="flex flex-col items-center justify-center gap-y-[5px]">
+          <h3 className="text-xl font-semibold text-foreground">Oops..</h3>
           Looks like you&apos;ve reached an empty space.
         </div>
         <Button variant="outline" className="bg-accent">

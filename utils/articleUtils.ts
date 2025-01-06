@@ -59,10 +59,21 @@ export const getArticleBySlug = (slug: string): GetOneParams => {
   const articles: GetManyParams = getArticles().filter((post) => post.slug === slug);
   if (articles.length === 1) {
     return articles[0];
-  } else if (articles.length > 1) {
-    throw new Error("Found multiple articles by same slug");
   } else {
-    throw new Error(`An error ocurred in ${getArticleBySlug.name}`);
+    return {
+      metadata: {
+        title: "",
+        tags: [],
+        word_count: 0,
+        preview_content: "",
+        image_path: "",
+        created_at: "",
+        last_updated_at: "",
+        is_highlighted: false,
+      },
+      content: "",
+      slug: "",
+    };
   }
 };
 

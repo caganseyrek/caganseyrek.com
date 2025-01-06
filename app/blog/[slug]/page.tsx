@@ -6,6 +6,8 @@ import { Metadata } from "next";
 
 import remarkGfm from "remark-gfm";
 
+import NotFoundPage from "@/app/not-found";
+
 import { getArticleBySlug } from "@/utils/articleUtils";
 import { parseTag as parseSlug } from "@/utils/tagUtils";
 
@@ -21,6 +23,10 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 const ArticlePage = async ({ params }: PageParams) => {
   const awaitedSlug = (await params).slug;
   const { content } = getArticleBySlug(awaitedSlug);
+
+  if (content.trim() === "") {
+    return <NotFoundPage />;
+  }
 
   return (
     <article>
@@ -38,10 +44,6 @@ const ArticlePage = async ({ params }: PageParams) => {
             }
 
             const match = /language-(\w+)/.exec(className || "");
-            console.log("match");
-            console.log(match);
-            console.log("className");
-            console.log(className);
             return match ? (
               <>
                 {
