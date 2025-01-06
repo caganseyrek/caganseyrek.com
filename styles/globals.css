@@ -101,7 +101,7 @@
     @apply flex flex-row gap-x-[7px] max-[570px]:hidden;
   }
   header nav.mobile-nav {
-    @apply hidden max-[570px]:flex;
+    @apply hidden max-[570px]:flex peer-[aria-expanded="true"]:flex;
   }
   header nav.mobile-nav .mobile-nav-btn {
     @apply rounded-sm hover:bg-background hidden max-[570px]:flex;
@@ -185,7 +185,7 @@
     @apply p-[15px] text-base font-semibold;
   }
   .accordion-content {
-    @apply bg-background pb-0 rounded-b-lg;
+    @apply bg-background p-0 rounded-b-lg;
   }
   .collaborate-section {
     @apply flex flex-col items-center justify-start gap-y-[15px];

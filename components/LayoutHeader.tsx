@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,12 +10,17 @@ import { Button } from "@/components/ui/button";
 import MobileNav from "./MobileNav";
 
 const LayoutHeader = () => {
+  const [isMobileNavToggled, setIsMobileNavToggled] = useState<boolean>(false);
   const pathname: string = usePathname();
 
   return (
     <header>
       <h2>Çağan Seyrek</h2>
-      <nav className="default-nav">
+      <nav
+        className="default-nav"
+        role="navigation"
+        aria-label="Main Navigation"
+        aria-hidden={isMobileNavToggled ? false : true}>
         <Button
           variant="outline"
           className={`rounded-sm hover:bg-background ${pathname === "/" ? "text-foreground" : "text-muted-foreground"}`}>
@@ -32,7 +37,7 @@ const LayoutHeader = () => {
           <Link href="/collaborate">Collaborate</Link>
         </Button>
       </nav>
-      <MobileNav />
+      <MobileNav isMobileNavToggled={isMobileNavToggled} setIsMobileNavToggled={setIsMobileNavToggled} />
     </header>
   );
 };

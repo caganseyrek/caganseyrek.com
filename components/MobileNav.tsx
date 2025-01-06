@@ -17,12 +17,28 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 
-const MobileNav = () => {
+interface MobileNavProps {
+  isMobileNavToggled: boolean;
+  // eslint-disable-next-line no-unused-vars
+  setIsMobileNavToggled: (value: boolean) => void;
+}
+
+const MobileNav = ({ isMobileNavToggled, setIsMobileNavToggled }: MobileNavProps) => {
   return (
-    <nav className="mobile-nav">
+    <nav
+      className="mobile-nav"
+      role="navigation"
+      aria-label="Mobile Navigation"
+      aria-hidden={isMobileNavToggled ? false : true}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button size="icon" variant="outline" className="mobile-nav-btn">
+          <Button
+            size="icon"
+            variant="outline"
+            role="button"
+            aria-label="Toggle Mobile Navigation"
+            onClick={() => setIsMobileNavToggled(!isMobileNavToggled)}
+            className="mobile-nav-btn">
             <Menu className="icon-18x18" />
           </Button>
         </DropdownMenuTrigger>
