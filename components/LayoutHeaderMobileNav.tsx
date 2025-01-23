@@ -4,7 +4,7 @@ import React from "react";
 
 import Link from "next/link";
 
-import { Menu } from "lucide-react";
+import { Boxes, Handshake, Home, Menu } from "lucide-react";
 
 import { Button } from "./ui/button";
 import {
@@ -18,42 +18,48 @@ import {
 } from "./ui/dropdown-menu";
 
 interface MobileNavProps {
-  isMobileNavToggled: boolean;
+  isToggled: boolean;
   // eslint-disable-next-line no-unused-vars
-  setIsMobileNavToggled: (value: boolean) => void;
+  setIsToggled: (value: boolean) => void;
 }
 
-const MobileNav = ({ isMobileNavToggled, setIsMobileNavToggled }: MobileNavProps) => {
+const LayoutHeaderMobileNav = ({ isToggled, setIsToggled }: MobileNavProps) => {
   return (
     <nav
-      className="mobile-nav"
+      className="hidden max-[570px]:flex"
       role="navigation"
       aria-label="Mobile Navigation"
-      aria-hidden={isMobileNavToggled ? false : true}>
+      aria-hidden={isToggled ? false : true}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
+            variant="white"
             size="icon"
-            variant="outline"
             role="button"
             aria-label="Toggle Mobile Navigation"
-            onClick={() => setIsMobileNavToggled(!isMobileNavToggled)}
-            className="mobile-nav-btn">
+            onClick={() => setIsToggled(!isToggled)}
+            className="rounded-sm hover:bg-background hidden max-[570px]:flex">
             <Menu className="icon-18x18" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56">
+        <DropdownMenuContent className="w-[180px] mr-md">
           <DropdownMenuLabel>Navigation</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <Link href="/">
-              <DropdownMenuItem className="cursor-pointer">About Me</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                <Home /> About Me
+              </DropdownMenuItem>
             </Link>
-            <Link href="/blog">
-              <DropdownMenuItem className="cursor-pointer">Blog</DropdownMenuItem>
+            <Link href="/projects">
+              <DropdownMenuItem className="cursor-pointer">
+                <Boxes /> Projects
+              </DropdownMenuItem>
             </Link>
             <Link href="/collaborate">
-              <DropdownMenuItem className="cursor-pointer">Collaborate</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                <Handshake /> Collaborate
+              </DropdownMenuItem>
             </Link>
           </DropdownMenuGroup>
         </DropdownMenuContent>
@@ -62,4 +68,4 @@ const MobileNav = ({ isMobileNavToggled, setIsMobileNavToggled }: MobileNavProps
   );
 };
 
-export default MobileNav;
+export default LayoutHeaderMobileNav;

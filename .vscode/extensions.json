@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "denoland.vscode-deno",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-next",
+    "ms-vscode.js-debug-nightly",
+    "christian-kohler.npm-intellisense",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "dsznajder.es7-react-js-snippets"
+  ]
+}

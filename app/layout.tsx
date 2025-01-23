@@ -23,7 +23,7 @@ const MainLayout = ({ children }: LayoutProps) => {
   return (
     <html>
       <head>
-        <link rel="icon" href="/images/favicon.png" sizes="any" />
+        <link rel="icon" href="/images/logo_favicon.png" sizes="any" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -33,7 +33,7 @@ const MainLayout = ({ children }: LayoutProps) => {
       </head>
       <body>
         <LayoutHeader />
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );

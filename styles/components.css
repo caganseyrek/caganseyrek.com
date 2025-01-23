@@ -1,0 +1,51 @@
+@layer components {
+  body {
+    @apply bg-background min-w-[400px] text-[16px] m-0 p-0 overflow-x-auto;
+  }
+  body .text-muted-foreground {
+    @apply text-gray-600;
+  }
+  main {
+    @apply w-[780px] box-border m-auto px-md my-lg flex flex-col gap-y-lg max-[780px]:w-full;
+  }
+  .icon-20 {
+    @apply h-[20px] w-[24px];
+  }
+  .icon-18 {
+    @apply h-[18px] w-[22px];
+  }
+  .icon-14 {
+    @apply h-[14px] w-[18px];
+  }
+  article {
+    @apply flex flex-col gap-[5px];
+  }
+  article h1 {
+    @apply text-2xl font-bold tracking-tight [&:not(:first-child)]:mt-[25px];
+  }
+  article h2 {
+    @apply text-xl font-bold tracking-tight [&:not(:first-child)]:mt-[25px];
+  }
+  article h3 {
+    @apply text-xl font-bold tracking-tight [&:not(:first-child)]:mt-[25px];
+  }
+  article p {
+    @apply m-0 p-0 text-muted-foreground;
+  }
+  article ul,
+  article ol {
+    @apply list-inside px-[10px] text-muted-foreground;
+  }
+  article ul {
+    @apply list-disc;
+  }
+  article ol {
+    @apply list-decimal;
+  }
+  article pre {
+    @apply rounded-b-lg text-sm font-mono pt-[5px];
+  }
+  div.codeblock-header {
+    @apply font-sans px-[15px] py-[7px] bg-border rounded-t-lg text-muted-foreground text-center;
+  }
+}

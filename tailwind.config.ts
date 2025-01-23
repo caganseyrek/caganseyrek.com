@@ -7,7 +7,8 @@ const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontFamily: {
-      sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+      mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
     },
     extend: {
       borderRadius: {
@@ -15,6 +16,9 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      padding: { lg: "30px", md: "15px", sm: "7px", xs: "5px" },
+      margin: { lg: "30px", md: "15px", sm: "7px", xs: "5px" },
+      gap: { lg: "30px", md: "15px", sm: "7px", xs: "5px" },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -76,10 +80,15 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "caret-blink": "caret-blink 1.25s ease-out infinite",
       },
     },
   },

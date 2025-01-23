@@ -2,21 +2,28 @@ import { Metadata } from "next";
 
 import { WebSite } from "schema-dts";
 
-interface MetadataTextsParams {
-  title: string;
-  desc: string;
-  url: string;
-}
-
-export const metadataTexts: MetadataTextsParams = {
+export const metadataTexts: { title: string; desc: string; url: string } = {
   title: "Çağan Seyrek",
   desc: "Senior computer engineering student who loves full-stack web development and the open-source.",
   url: "https://caganseyrek.com",
 };
 
+export const links: { GITHUB: string; NPM: string; LINKEDIN: string; LINKEDIN_SERVICE: string } = {
+  GITHUB: "https://github.com/caganseyrek",
+  NPM: "https://www.npmjs.com/~caganseyrek",
+  LINKEDIN: "https://www.linkedin.com/in/caganseyrek/",
+  LINKEDIN_SERVICE: "https://www.linkedin.com/services/page/4548aa324845553b6b/",
+};
+
+const generalCat: { abs_url: string; rel_path: string; alt_text: string } = {
+  abs_url: "https://caganseyrek.com/assets/images/general_cat.png",
+  rel_path: "/assets/images/general_cat.png",
+  alt_text: "My Profile Picture",
+};
+
 export const metadataObject: Metadata = {
   description: metadataTexts.desc,
-  authors: [{ name: "Çağan Seyrek" }],
+  authors: [{ name: metadataTexts.title }],
   keywords: ["full-stack developer", "software engineer", "software developer", "computer engineer", "portfolio"],
   robots: {
     index: true,
@@ -30,13 +37,13 @@ export const metadataObject: Metadata = {
     url: metadataTexts.url,
     images: [
       {
-        url: "https://caganseyrek.com/assets/images/general_cat.png",
-        alt: "My Profile Picture",
+        url: generalCat.abs_url,
+        alt: generalCat.alt_text,
         width: 128,
         height: 128,
       },
     ],
-    siteName: "Çağan Seyrek",
+    siteName: metadataTexts.title,
   },
   twitter: {
     card: "summary_large_image",
@@ -44,8 +51,8 @@ export const metadataObject: Metadata = {
     description: metadataTexts.desc,
     images: [
       {
-        url: "https://caganseyrek.com/assets/images/general_cat.png",
-        alt: "My Profile Picture",
+        url: generalCat.abs_url,
+        alt: generalCat.alt_text,
         width: 128,
         height: 128,
       },
@@ -63,12 +70,8 @@ export const jsonLd: WebSite = {
     name: metadataTexts.title,
     logo: {
       "@type": "ImageObject",
-      url: "/assets/images/general_cat.png",
+      url: generalCat.rel_path,
     },
   },
-  sameAs: [
-    "https://github.com/caganseyrek",
-    "https://www.npmjs.com/~caganseyrek",
-    "https://www.linkedin.com/in/caganseyrek/",
-  ],
+  sameAs: [links.GITHUB, links.LINKEDIN, links.NPM],
 };
