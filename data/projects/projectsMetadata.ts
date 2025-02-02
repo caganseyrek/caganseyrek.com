@@ -60,28 +60,4 @@ export const projectMetadata: ProjectDetailsProps[] = [
     },
     is_highlighted: false,
   },
-  {
-    slug: "quicktoc",
-    title: "QuickTOC",
-    preview_text: "Automatic table of contents generator",
-    tags: ["typescript", "npm"],
-    links: {
-      repository: "https://github.com/caganseyrek/QuickTOC",
-      package_page: "https://www.npmjs.com/package/quicktoc",
-      article_page_path: null,
-    },
-    is_highlighted: false,
-  },
-  {
-    slug: "riskanalyzer",
-    title: "RiskAnalyzer",
-    preview_text: "Simple, terminal-based risk analyzer",
-    tags: ["c++", "terminal"],
-    links: {
-      repository: "https://github.com/caganseyrek/RiskAnalyzer",
-      package_page: null,
-      article_page_path: null,
-    },
-    is_highlighted: false,
-  },
 ];
