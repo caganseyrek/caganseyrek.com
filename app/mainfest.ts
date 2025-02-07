@@ -1,12 +1,12 @@
 import { type MetadataRoute } from "next";
 
-import { metadataTexts } from "@/data/metadata";
+import { infoTexts } from "@/data/metadata";
 
 function manifest(): MetadataRoute.Manifest {
   return {
-    name: metadataTexts.title,
-    short_name: metadataTexts.title,
-    description: metadataTexts.desc,
+    name: infoTexts.title,
+    short_name: infoTexts.title,
+    description: infoTexts.desc,
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

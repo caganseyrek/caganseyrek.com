@@ -1,18 +1,18 @@
 import React from "react";
 
-import { SiGithub, SiLinkedin, SiNpm } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiLinkedin } from "@icons-pack/react-simple-icons";
 
 import LinkedButton from "@/components/LinkedButton";
 import SharedImages from "@/components/SharedImages";
 
-import HeaderElement from "../HeaderElement";
+import HeadingElement from "../HeadingElement";
 import { links } from "@/data/metadata";
 
 const IntroSection = () => {
   return (
     <div className="flex flex-row items-start justify-center gap-md max-[630px]:flex-col-reverse max-[630px]:items-center">
       <div className="flex flex-col items-start justify-start gap-md max-[630px]:justify-center max-[630px]:items-center">
-        <HeaderElement type="intro">Hey, I&apos;m Çağan</HeaderElement>
+        <HeadingElement type="intro">Hey, I&apos;m Çağan</HeadingElement>
         <span className="text-muted-foreground max-[630px]:text-center">
           I&apos;m a senior-year computer engineering student passionate about full-stack development, software
           engineering, and the open-source way of collaborating to improve technology for everyone. I enjoy working with
@@ -21,9 +21,6 @@ const IntroSection = () => {
         <div className="flex flex-row items-center justify-start gap-sm">
           <LinkedButton href={links.GITHUB} isExternal>
             <SiGithub /> GitHub
-          </LinkedButton>
-          <LinkedButton href={links.NPM} isExternal>
-            <SiNpm /> NPM
           </LinkedButton>
           <LinkedButton href={links.LINKEDIN} isExternal>
             <SiLinkedin /> LinkedIn

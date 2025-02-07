@@ -7,9 +7,9 @@ import { usePathname } from "next/navigation";
 
 import { Boxes, Handshake, Home } from "lucide-react";
 
+import LinkedButton from "../LinkedButton";
+import SharedImages from "../SharedImages";
 import LayoutHeaderMobileNav from "./LayoutHeaderMobileNav";
-import LinkedButton from "./LinkedButton";
-import SharedImages from "./SharedImages";
 
 const LayoutHeader = () => {
   const [isMobileNavToggled, setIsMobileNavToggled] = useState<boolean>(false);

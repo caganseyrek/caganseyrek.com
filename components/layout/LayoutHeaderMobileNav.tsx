@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { Boxes, Handshake, Home, Menu } from "lucide-react";
 
-import { Button } from "./ui/button";
+import { Button } from "../base/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +15,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+} from "../base/dropdown-menu";
 
 interface MobileNavProps {
   isToggled: boolean;

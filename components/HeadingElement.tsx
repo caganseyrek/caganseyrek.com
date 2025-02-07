@@ -6,7 +6,7 @@ interface HeadingElementProps {
   children?: ReactNode;
 }
 
-const HeaderElement = ({ type = "page-header", className = "", children }: HeadingElementProps) => {
+const HeadingElement = ({ type = "page-header", className = "", children }: HeadingElementProps) => {
   if (type === "intro") {
     return <h1 className={`text-2xl tracking-tight font-bold leading-tight ${className}`}>{children}</h1>;
   }
@@ -19,4 +19,4 @@ const HeaderElement = ({ type = "page-header", className = "", children }: Headi
   );
 };
 
-export default HeaderElement;
+export default HeadingElement;

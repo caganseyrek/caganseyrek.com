@@ -5,7 +5,7 @@ export interface ProjectDetailsProps {
   tags: string[];
   links: {
     repository: string;
-    package_page: string | null;
+    // package_page: string | null;
     article_page_path: string | null;
   };
   is_highlighted: boolean;
@@ -19,7 +19,6 @@ export const projectMetadata: ProjectDetailsProps[] = [
     tags: ["spring_boot", "next.js", "python"],
     links: {
       repository: "https://github.com/FlightCoordinator/FlightCoordinator",
-      package_page: null,
       article_page_path: null,
     },
     is_highlighted: true,
@@ -31,10 +30,20 @@ export const projectMetadata: ProjectDetailsProps[] = [
     tags: ["next.js", "express.js", "typescript"],
     links: {
       repository: "https://github.com/caganseyrek/WalletTuner",
-      package_page: null,
       article_page_path: null,
     },
     is_highlighted: true,
+  },
+  {
+    slug: "express-ts-template",
+    title: "Express-TS Template",
+    preview_text: "A boilerplate for Express app with TypeScript",
+    tags: ["typescript", "expressjs", "layered-architecture"],
+    links: {
+      repository: "https://github.com/caganseyrek/express-ts-template",
+      article_page_path: null,
+    },
+    is_highlighted: false,
   },
   {
     slug: "caganseyrek.com",
@@ -43,19 +52,6 @@ export const projectMetadata: ProjectDetailsProps[] = [
     tags: ["next.js", "tailwind", "typescript"],
     links: {
       repository: "https://github.com/caganseyrek/caganseyrek.com",
-      package_page: null,
-      article_page_path: null,
-    },
-    is_highlighted: false,
-  },
-  {
-    slug: "easyrequester",
-    title: "EasyRequester",
-    preview_text: "A custom and flexible HTTP requester",
-    tags: ["typescript", "fetch-api", "npm"],
-    links: {
-      repository: "https://github.com/caganseyrek/EasyRequester",
-      package_page: "https://www.npmjs.com/package/easy-requester",
       article_page_path: null,
     },
     is_highlighted: false,

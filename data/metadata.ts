@@ -2,15 +2,14 @@ import { Metadata } from "next";
 
 import { WebSite } from "schema-dts";
 
-export const metadataTexts: { title: string; desc: string; url: string } = {
+export const infoTexts: { title: string; desc: string; url: string } = {
   title: "Çağan Seyrek",
   desc: "Senior computer engineering student who loves full-stack web development and the open-source.",
   url: "https://caganseyrek.com",
 };
 
-export const links: { GITHUB: string; NPM: string; LINKEDIN: string; LINKEDIN_SERVICE: string } = {
+export const links: { GITHUB: string; LINKEDIN: string; LINKEDIN_SERVICE: string } = {
   GITHUB: "https://github.com/caganseyrek",
-  NPM: "https://www.npmjs.com/~caganseyrek",
   LINKEDIN: "https://www.linkedin.com/in/caganseyrek/",
   LINKEDIN_SERVICE: "https://www.linkedin.com/services/page/4548aa324845553b6b/",
 };
@@ -21,9 +20,9 @@ const generalCat: { abs_url: string; rel_path: string; alt_text: string } = {
   alt_text: "My Profile Picture",
 };
 
-export const metadataObject: Metadata = {
-  description: metadataTexts.desc,
-  authors: [{ name: metadataTexts.title }],
+export const headMetadata: Metadata = {
+  description: infoTexts.desc,
+  authors: [{ name: infoTexts.title }],
   keywords: ["full-stack developer", "software engineer", "software developer", "computer engineer", "portfolio"],
   robots: {
     index: true,
@@ -32,9 +31,9 @@ export const metadataObject: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: metadataTexts.title,
-    description: metadataTexts.desc,
-    url: metadataTexts.url,
+    title: infoTexts.title,
+    description: infoTexts.desc,
+    url: infoTexts.url,
     images: [
       {
         url: generalCat.abs_url,
@@ -43,12 +42,12 @@ export const metadataObject: Metadata = {
         height: 128,
       },
     ],
-    siteName: metadataTexts.title,
+    siteName: infoTexts.title,
   },
   twitter: {
     card: "summary_large_image",
-    title: metadataTexts.title,
-    description: metadataTexts.desc,
+    title: infoTexts.title,
+    description: infoTexts.desc,
     images: [
       {
         url: generalCat.abs_url,
@@ -62,16 +61,16 @@ export const metadataObject: Metadata = {
 
 export const jsonLd: WebSite = {
   "@type": "WebSite",
-  name: metadataTexts.title,
-  url: metadataTexts.url,
-  description: metadataTexts.desc,
+  name: infoTexts.title,
+  url: infoTexts.url,
+  description: infoTexts.desc,
   publisher: {
     "@type": "Organization",
-    name: metadataTexts.title,
+    name: infoTexts.title,
     logo: {
       "@type": "ImageObject",
       url: generalCat.rel_path,
     },
   },
-  sameAs: [links.GITHUB, links.LINKEDIN, links.NPM],
+  sameAs: [links.GITHUB, links.LINKEDIN],
 };

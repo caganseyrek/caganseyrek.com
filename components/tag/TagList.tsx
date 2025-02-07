@@ -1,21 +1,21 @@
 import React from "react";
 
-import TagElement from "./TagElement";
+import TagListItem from "./TagListItem";
 
 interface TagListProps {
   tags: string[];
 }
 
-const TagListElement = ({ tags }: TagListProps) => {
+const TagList = ({ tags }: TagListProps) => {
   return (
     <div className="flex flex-row gap-xs flex-wrap">
       {tags.map((tag) => (
-        <TagElement key={tag} bg="white" size="smaller">
+        <TagListItem key={tag} bg="white" size="smaller">
           {tag}
-        </TagElement>
+        </TagListItem>
       ))}
     </div>
   );
 };
 
-export default TagListElement;
+export default TagList;

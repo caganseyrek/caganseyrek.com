@@ -2,9 +2,9 @@ import React, { type ReactNode } from "react";
 
 import { Metadata } from "next";
 
-import LayoutHeader from "@/components/LayoutHeader";
+import LayoutHeader from "@/components/layout/LayoutHeader";
 
-import { jsonLd, metadataObject } from "@/data/metadata";
+import { headMetadata, jsonLd } from "@/data/metadata";
 import "@/styles/globals.css";
 
 interface LayoutProps {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s - Çağan Seyrek",
     default: "Çağan Seyrek",
   },
-  ...metadataObject,
+  ...headMetadata,
 };
 
 const MainLayout = ({ children }: LayoutProps) => {

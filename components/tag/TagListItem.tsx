@@ -8,7 +8,7 @@ interface TagElementProps {
   children?: ReactNode;
 }
 
-const TagElement = ({
+const TagListItem = ({
   hasHoverEffect = false,
   bg = "default",
   size = "default",
@@ -26,4 +26,4 @@ const TagElement = ({
   return <span className={styles}>{children}</span>;
 };
 
-export default TagElement;
+export default TagListItem;

@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Separator } from "@/components/ui/separator";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/base/accordion";
+import { Separator } from "@/components/base/separator";
 
-import TagElement from "../TagElement";
+import TagListItem from "../tag/TagListItem";
 import techstackList from "@/data/techstack";
 
 const TechstackSection = () => {
@@ -21,10 +21,10 @@ const TechstackSection = () => {
                 <h3 className="text-base font-semibold tracking-tight">{category.label}</h3>
                 <div className="flex items-start justify-start flex-row flex-wrap gap-xs">
                   {category.list.map((item) => (
-                    <TagElement key={item.key} hasHoverEffect>
+                    <TagListItem key={item.key} hasHoverEffect>
                       <item.icon className="icon-14" />
                       {item.label}
-                    </TagElement>
+                    </TagListItem>
                   ))}
                 </div>
               </div>
