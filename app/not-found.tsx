@@ -4,23 +4,23 @@ import { Metadata } from "next";
 
 import { Origami } from "lucide-react";
 
-import HeadingElement from "@/components/HeadingElement";
-import LinkedButton from "@/components/LinkedButton";
+import ExtraPageContainer from "@/components/shared/ExtraPageContainer";
+import LinkedButton from "@/components/shared/LinkedButton";
+import MainPageWrapper from "@/components/shared/MainPageWrapper";
+import PageTitle from "@/components/shared/PageTitle";
 
 export const metadata: Metadata = { title: "Not Found" };
 
 const NotFoundPage = () => {
   return (
-    <div className="w-full flex items-center justify-center">
-      <div className="p-lg w-fit flex flex-col items-center justify-center gap-md">
-        <Origami className="text-foreground w-[34px] h-[38px]" />
-        <div className="flex flex-col items-center justify-center gap-xs">
-          <HeadingElement type="page-header">Oops...</HeadingElement>
-          <span className="text-muted-foreground">Looks like you&apos;ve reached an empty space.</span>
-        </div>
-        <LinkedButton href="/">Return to Homepage</LinkedButton>
-      </div>
-    </div>
+    <MainPageWrapper className="items-center justify-center gap-md py-md">
+      <Origami className="text-foreground w-[34px] h-[38px]" />
+      <ExtraPageContainer>
+        <PageTitle title="Oops..." />
+        <span className="text-muted-foreground">Looks like you&apos;ve reached an empty space.</span>
+      </ExtraPageContainer>
+      <LinkedButton href="/">Return to Homepage</LinkedButton>
+    </MainPageWrapper>
   );
 };
 

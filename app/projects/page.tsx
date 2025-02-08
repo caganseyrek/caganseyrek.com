@@ -2,20 +2,18 @@ import React from "react";
 
 import { Metadata } from "next";
 
-import HeadingElement from "@/components/HeadingElement";
-import ProjectsList from "@/components/ProjectsList";
+import ProjectsList from "@/components/project/ProjectsList";
+import MainPageWrapper from "@/components/shared/MainPageWrapper";
+import PageTitle from "@/components/shared/PageTitle";
 
 export const metadata: Metadata = { title: "Projects" };
 
 const ProjectsPage = () => {
   return (
-    <main>
-      <div className="flex items-center justify-center flex-col gap-sm">
-        <HeadingElement type="page-header">Projects</HeadingElement>
-        <span className="text-muted-foreground">Open-source projects I&apos;ve developed over the years.</span>
-      </div>
+    <MainPageWrapper>
+      <PageTitle title="Projects" subtitle="Open-source projects I've developed over the years." />
       <ProjectsList />
-    </main>
+    </MainPageWrapper>
   );
 };
 

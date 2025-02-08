@@ -7,8 +7,8 @@ const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontFamily: {
-      sans: ["Roboto", ...defaultTheme.fontFamily.sans],
-      mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
+      sans: ["Geist", ...defaultTheme.fontFamily.sans],
+      mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
     },
     extend: {
       borderRadius: {

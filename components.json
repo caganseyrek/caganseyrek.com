@@ -13,9 +13,9 @@
   "aliases": {
     "components": "@/components",
     "utils": "@/utils/twUtils",
-    "ui": "@/components/ui",
+    "ui": "@/components/ui-base",
     "lib": "@/lib",
-    "hooks": "@/hooks"
+    "hooks": "@/utils/hooks"
   },
   "iconLibrary": "lucide"
 }

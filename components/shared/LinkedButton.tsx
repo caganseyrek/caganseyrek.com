@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 
 import Link from "next/link";
 
-import { Button } from "./base/button";
+import { Button } from "../ui-base/button";
 
 interface LinkedButtonProps {
   variant?: "default" | "white";

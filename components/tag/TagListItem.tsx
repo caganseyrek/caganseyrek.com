@@ -1,29 +1,31 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
-interface TagElementProps {
-  hasHoverEffect?: boolean;
-  bg?: "default" | "white";
-  size?: "default" | "smaller";
-  className?: string;
-  children?: ReactNode;
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/utils/twUtils";
+
+interface TagListItemProps {
+  children?: React.ReactNode;
+  variant?: "default" | "white";
 }
 
-const TagListItem = ({
-  hasHoverEffect = false,
-  bg = "default",
-  size = "default",
-  className = "",
-  children,
-}: TagElementProps) => {
-  const commonStyles: string =
-    "flex flex-row items-center justify-center border rounded-sm gap-xs text-sm font-medium select-none px-sm text-muted-foreground";
+const TagListItem = ({ children, variant = "default" }: TagListItemProps) => {
+  const tagListItemVariants = cva(
+    "border rounded-md flex flex-row items-center justify-center gap-[7px] py-xs px-sm text-muted-foreground text-sm select-none hover:text-foreground transition-colors",
+    {
+      variants: {
+        variant: {
+          default: "bg-accent",
+          white: "bg-background",
+        },
+      },
+      defaultVariants: {
+        variant: "default",
+      },
+    },
+  );
 
-  const elementBg: string = bg === "default" ? "bg-accent" : "bg-background";
-  const hoverEffect: string = hasHoverEffect ? "hover:text-foreground transition-colors" : "";
-
-  const styles: string = `${commonStyles} ${elementBg} ${hoverEffect} ${size === "default" ? "py-xs" : "py-[3px]"} ${className}`;
-
-  return <span className={styles}>{children}</span>;
+  return <span className={cn(tagListItemVariants({ variant }))}>{children}</span>;
 };
 
 export default TagListItem;

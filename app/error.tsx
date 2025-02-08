@@ -6,22 +6,23 @@ import { Metadata } from "next";
 
 import { Puzzle } from "lucide-react";
 
-import LinkedButton from "@/components/LinkedButton";
+import ExtraPageContainer from "@/components/shared/ExtraPageContainer";
+import LinkedButton from "@/components/shared/LinkedButton";
+import MainPageWrapper from "@/components/shared/MainPageWrapper";
+import PageTitle from "@/components/shared/PageTitle";
 
 export const metadata: Metadata = { title: "Error..." };
 
 const ErrorPage = () => {
   return (
-    <div className="w-full flex items-center justify-center">
-      <div className="p-lg w-fit text-muted-foreground flex flex-col items-center justify-center gap-md">
-        <Puzzle className="text-foreground w-[34px] h-[38px]" />
-        <div className="flex flex-col items-center justify-center gap-xs">
-          <h3 className="text-xl font-semibold text-foreground">Oops...</h3>
-          Looks like some error occurred. I&apos;m really sorry...
-        </div>
-        <LinkedButton href="/">Return to Homepage</LinkedButton>
-      </div>
-    </div>
+    <MainPageWrapper className="items-center justify-center gap-md py-md">
+      <Puzzle className="text-foreground w-[34px] h-[38px]" />
+      <ExtraPageContainer>
+        <PageTitle title="Oops..." />
+        <span className="text-muted-foreground">Looks like some error occurred. I&apos;m really sorry...</span>
+      </ExtraPageContainer>
+      <LinkedButton href="/">Return to Homepage</LinkedButton>
+    </MainPageWrapper>
   );
 };
 

@@ -1,21 +1,11 @@
 import React from "react";
 
-import TagListItem from "./TagListItem";
-
 interface TagListProps {
-  tags: string[];
+  children?: React.ReactNode;
 }
 
-const TagList = ({ tags }: TagListProps) => {
-  return (
-    <div className="flex flex-row gap-xs flex-wrap">
-      {tags.map((tag) => (
-        <TagListItem key={tag} bg="white" size="smaller">
-          {tag}
-        </TagListItem>
-      ))}
-    </div>
-  );
+const TagList = ({ children }: TagListProps) => {
+  return <div className="flex flex-row flex-wrap items-center justify-start gap-xs">{children}</div>;
 };
 
 export default TagList;

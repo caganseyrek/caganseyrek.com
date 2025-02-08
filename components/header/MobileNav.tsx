@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { Boxes, Handshake, Home, Menu } from "lucide-react";
 
-import { Button } from "../base/button";
+import { Button } from "../ui-base/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,15 +15,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../base/dropdown-menu";
+} from "../ui-base/dropdown-menu";
 
-interface MobileNavProps {
-  isToggled: boolean;
-  // eslint-disable-next-line no-unused-vars
-  setIsToggled: (value: boolean) => void;
-}
+const LayoutHeaderMobileNav = () => {
+  const [isToggled, setIsToggled] = React.useState<boolean>(false);
 
-const LayoutHeaderMobileNav = ({ isToggled, setIsToggled }: MobileNavProps) => {
   return (
     <nav
       className="hidden max-[570px]:flex"
@@ -48,7 +44,7 @@ const LayoutHeaderMobileNav = ({ isToggled, setIsToggled }: MobileNavProps) => {
           <DropdownMenuGroup>
             <Link href="/">
               <DropdownMenuItem className="cursor-pointer">
-                <Home /> About Me
+                <Home /> About
               </DropdownMenuItem>
             </Link>
             <Link href="/projects">

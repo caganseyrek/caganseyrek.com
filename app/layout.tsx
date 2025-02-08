@@ -2,7 +2,7 @@ import React, { type ReactNode } from "react";
 
 import { Metadata } from "next";
 
-import LayoutHeader from "@/components/layout/LayoutHeader";
+import Header from "@/components/header/Header";
 
 import { headMetadata, jsonLd } from "@/data/metadata";
 import "@/styles/globals.css";
@@ -32,7 +32,7 @@ const MainLayout = ({ children }: LayoutProps) => {
         />
       </head>
       <body>
-        <LayoutHeader />
+        <Header />
         {children}
       </body>
     </html>
