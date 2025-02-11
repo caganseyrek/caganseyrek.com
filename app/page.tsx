@@ -15,15 +15,15 @@ export const metadata: Metadata = { title: "About Me - Çağan Seyrek" };
 
 const AboutMe = () => {
   return (
-    <MainPageWrapper>
-      <section className="flex flex-row items-start justify-start gap-md">
-        <div className="flex flex-col items-start justify-start gap-md">
+    <MainPageWrapper className="max-[650px]:gap-lg">
+      <section className="flex flex-row items-start justify-start gap-md max-[650px]:flex-col-reverse max-[650px]:items-center">
+        <div className="flex flex-col items-start justify-start gap-md max-[650px]:items-center">
           <h1 className="text-2xl tracking-tight font-bold leading-tight">Hey, I&apos;m Çağan</h1>
-          <span className="text-muted-foreground text-pretty">
+          <span className="text-muted-foreground text-pretty max-[650px]:text-center">
             I&apos;m a senior-year computer engineering student with a strong passion for full-stack development and
             software engineering. I am a supporter of open-source as a way to improve technology for everyone.
           </span>
-          <span className="text-muted-foreground text-pretty">
+          <span className="text-muted-foreground text-pretty max-[650px]:text-center">
             I enjoy building scalable and efficient applications while exploring different languages, frameworks, and
             architectural patterns.
           </span>

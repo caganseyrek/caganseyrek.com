@@ -5,7 +5,7 @@ interface HeaderBaseProps {
 }
 
 const HeaderBase = ({ children }: HeaderBaseProps) => {
-  return <header className="w-full border-b bg-accent p-md flex items-center justify-center">{children}</header>;
+  return <header className="w-full border-b bg-accent py-md flex items-center justify-center">{children}</header>;
 };
 
 export default HeaderBase;

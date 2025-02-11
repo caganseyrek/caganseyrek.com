@@ -67,7 +67,7 @@
 }
 @layer components {
   body {
-    @apply bg-background min-w-[400px] m-0 p-0 overflow-x-auto;
+    @apply bg-background min-w-[350px] m-0 p-0 overflow-x-auto;
   }
   article {
     @apply flex flex-col gap-[5px];

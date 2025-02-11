@@ -13,7 +13,7 @@ const PageTitle = ({ title, subtitle }: PageTitleProps) => {
   return (
     <div className="flex items-center justify-center flex-col gap-xs">
       <h3 className="text-xl font-semibold text-foreground">{title}</h3>
-      <span className="text-muted-foreground">{subtitle}</span>
+      <span className="text-muted-foreground text-center">{subtitle}</span>
     </div>
   );
 };
