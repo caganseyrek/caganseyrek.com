@@ -3,7 +3,7 @@ import { SiGithub } from "react-icons/si";
 
 import Link from "next/link";
 
-import { BookText } from "lucide-react";
+import { FileText } from "lucide-react";
 
 import { ProjectDetailProps, ProjectDocsProps, ProjectRepositoryProps } from "@/shared/data/projectsList";
 
@@ -22,33 +22,40 @@ interface ProjectListItemProps {
 
 const ProjectHeader = ({ title, repository, docs }: ProjectHeaderProps) => {
   return (
-    <div className="bg-accent rounded-t-[7px] flex flex-1 flex-col items-start justify-start w-full p-md gap-sm">
-      <div className="flex flex-col items-start justify-start">
-        <div className="flex flex-row items-center justify-start gap-sm">
+    <div className="w-full bg-accent rounded-t-[7px] flex flex-1 flex-col items-start justify-start p-md gap-sm">
+      <div className="w-full flex flex-col items-start justify-start">
+        <div className="w-full flex flex-row items-center justify-between gap-sm">
           <span className="font-semibold inline-block">{title}</span>
-          <div className="flex flex-row items-center justify-start gap-sm">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link href={repository.url} target="_blank">
-                    <SiGithub className="w-4 h-4 min-w-4 min-h-4" /> <span className="sr-only">Repository</span>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>{title}&apos;s Repository</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+          <div className="flex flex-row items-center justify-start">
             {docs && (
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Link href={docs.path}>
-                      <BookText className="w-4 h-4 min-w-4 min-h-4" /> <span className="sr-only">Docs</span>
+                    <Link
+                      href={docs.path}
+                      className="p-1 hover:bg-border rounded-sm transition-colors flex items-center justify-center">
+                      <FileText className="w-4 h-4 min-w-4 min-h-4 flex items-center justify-center" />{" "}
+                      <span className="sr-only">Docs</span>
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>{title}&apos;s Docs</TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             )}
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={repository.url}
+                    target="_blank"
+                    className="p-1 hover:bg-border rounded-sm transition-colors flex items-center justify-center">
+                    <SiGithub className="w-4 h-4 min-w-4 min-h-4 flex items-center justify-center" />{" "}
+                    <span className="sr-only">Repository</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>{title}&apos;s Repository</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
         </div>
         <span className="text-muted-foreground flex-1 text-sm">{repository.description}</span>
