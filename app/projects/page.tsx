@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "Projects" };
 const ProjectsPage = () => {
   return (
     <PageWrapper>
-      <PageTitle title="Projects" subtitle="Open-source projects I've developed" />
+      <PageTitle title="Projects" subtitle="Open-source hobby projects that I've developed" />
       <Projects />
     </PageWrapper>
   );
