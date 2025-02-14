@@ -62,7 +62,7 @@ const ProjectDocsPage = async ({ params }: ProjectDocsPageParams) => {
         </LinkedButton>
       </div>
       <TableOfContents content={loadedProject.content} />
-      <article>
+      <article className="w-full">
         <Markdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[

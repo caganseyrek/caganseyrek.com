@@ -19,7 +19,7 @@ const TestHeader = () => {
 
   return (
     <div className="bg-accent border-b">
-      <header className="w-[800px] flex flex-row items-center justify-between p-md m-auto max-[800px]:w-auto">
+      <header className="w-[800px] flex flex-row items-center justify-between p-md m-auto gap-md max-[800px]:w-auto">
         <Link href="/" className="text-xl tracking-tighter font-semibold group">
           <svg xmlns="http://www.w3.org/2000/svg" width="42" height="32" viewBox="0 0 42 32" fill="none">
             <path

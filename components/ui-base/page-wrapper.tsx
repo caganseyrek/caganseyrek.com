@@ -10,7 +10,7 @@ const PageWrapper = ({ children, className }: PageWrapperProps) => {
   return (
     <div
       className={cn(
-        "w-[800px] max-[800px]:w-auto h-full box-border m-auto px-md my-lg flex flex-col flex-1 gap-y-md",
+        "w-[800px] max-[800px]:w-full h-full box-border m-auto px-md my-lg flex flex-col flex-1 gap-y-md",
         className,
       )}>
       {children}
