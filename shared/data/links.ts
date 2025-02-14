@@ -2,7 +2,7 @@ import React from "react";
 import { IconType } from "react-icons";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
-import { Computer, Handshake, HomeIcon, LucideProps } from "lucide-react";
+import { Computer, HomeIcon, LucideProps } from "lucide-react";
 
 import { metadataBase } from "./metadataBase";
 
