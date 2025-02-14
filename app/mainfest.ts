@@ -1,14 +1,17 @@
 import { type MetadataRoute } from "next";
 
-import { infoTexts } from "@/data/metadata";
+import { metadataBase } from "@/shared/data/metadataBase";
 
 function manifest(): MetadataRoute.Manifest {
   return {
-    name: infoTexts.title,
-    short_name: infoTexts.title,
-    description: infoTexts.desc,
+    id: metadataBase.url,
+    name: metadataBase.title,
+    short_name: metadataBase.title,
+    description: metadataBase.desc,
+    scope: metadataBase.url,
     start_url: "/",
     display: "standalone",
+    orientation: "natural",
     background_color: "#ffffff",
     theme_color: "#ffffff",
     icons: [
@@ -22,6 +25,10 @@ function manifest(): MetadataRoute.Manifest {
         sizes: "27x27",
         type: "image/png",
       },
+    ],
+    shortcuts: [
+      { name: "Projects", url: "/projects" },
+      { name: "Collaborate", url: "/collaborate" },
     ],
   };
 }

@@ -2,10 +2,11 @@ import React, { type ReactNode } from "react";
 
 import { Metadata } from "next";
 
-import Header from "@/components/header/Header";
+import Footer from "@/components/partial/Footer";
+import Header from "@/components/partial/Header";
 
-import { headMetadata, jsonLd } from "@/data/metadata";
-import "@/styles/globals.css";
+import { headMetadata, jsonLd } from "@/shared/data/metadataBase";
+import "@/shared/styles/globals.css";
 
 interface LayoutProps {
   children: ReactNode;
@@ -21,9 +22,9 @@ export const metadata: Metadata = {
 
 const MainLayout = ({ children }: LayoutProps) => {
   return (
-    <html>
+    <html className="scroll-smooth">
       <head>
-        <link rel="icon" href="/images/logo_favicon.png" sizes="any" />
+        <link rel="icon" href="/images/favicon.png" sizes="any" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -34,6 +35,7 @@ const MainLayout = ({ children }: LayoutProps) => {
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

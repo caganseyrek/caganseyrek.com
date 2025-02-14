@@ -2,18 +2,18 @@ import React from "react";
 
 import { Metadata } from "next";
 
-import ProjectsList from "@/components/project/ProjectsList";
-import MainPageWrapper from "@/components/shared/MainPageWrapper";
-import PageTitle from "@/components/shared/PageTitle";
+import Projects from "@/components/Projects";
+import PageTitle from "@/components/ui-base/page-title";
+import { PageWrapper } from "@/components/ui-base/page-wrapper";
 
 export const metadata: Metadata = { title: "Projects" };
 
 const ProjectsPage = () => {
   return (
-    <MainPageWrapper>
-      <PageTitle title="Projects" subtitle="Open-source projects I've developed over the years." />
-      <ProjectsList />
-    </MainPageWrapper>
+    <PageWrapper>
+      <PageTitle title="Projects" subtitle="Open-source projects I've developed" />
+      <Projects />
+    </PageWrapper>
   );
 };
 
