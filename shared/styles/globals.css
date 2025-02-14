@@ -90,7 +90,7 @@
 }
 @layer components {
   body {
-    @apply bg-background min-w-[350px] min-h-dvh m-0 p-0 overflow-x-auto flex flex-col;
+    @apply bg-background min-w-[350px] min-h-dvh m-0 p-0 overflow-x-auto flex flex-col w-full;
   }
   article {
     @apply flex flex-col gap-sm;
