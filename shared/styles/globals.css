@@ -126,7 +126,7 @@
   }
   article ul li::marker,
   article ol li::marker {
-    @apply font-semibold;
+    @apply font-semibold text-foreground;
   }
   article pre {
     @apply rounded-b-lg text-sm font-mono py-md;
@@ -139,7 +139,7 @@
   article ol li b,
   article ul li strong,
   article ol li strong {
-    @apply font-semibold;
+    @apply font-semibold text-foreground;
   }
   article :not(h1):not(h2):not(h3):not(h4) > a {
     @apply underline hover:text-foreground transition-colors;
