@@ -168,7 +168,7 @@ interface ClientConfig {
 ```
 
 - **onNewRequest**: This property determines how to deal with race conditions. We will dive into what these 'race conditions' are in the [next section](#race-conditions).
-- **acceptStatusCodes**: This property determines which responses is successful. By default, the requester accepts this status codes:
+- **acceptStatusCodes**: This property determines which status codes are expected with response. `isSuccess` is set to `true` if status code from the response is among this expected status codes. By default, the requester expect this status codes:
   ```typescript
   const POSSIBLE_STATUS_CODES: number[] = [200, 201, 202, 203, 204, 205, 206];
   ```
@@ -207,8 +207,8 @@ interface RequestConfig {
 
    - **protocol (optional)**: This is the protocol for the request and accepts `http` or `https`. It defaults to `http`.
    - **baseUrl (required)**: This is the base of the url we will send the request to. It should **not** contain protocol, port, endpoint etc. Basically it should only be the entrypoint of the server like `example.com/api`.
-   - **port (optional)**: This is the port value that comes before the TLD. It doesn't have a default value and is not set by default.
-   - **endpoint (required)**: This is the endpoint/route that comes after the base url. It can be a simple string like `/auth/user/register`, or can be an object. If an object is passed to the property, the requester builds an endpoint using the values (not the keys).
+   - **port (optional)**: This is the port value of the url. It doesn't have a default value and is not set by default.
+   - **endpoint (required)**: This is the endpoint/route that comes after the base url. It can be a simple string like `/auth/user/register`, or can be an object. If an object is passed to the property, the requester builds an endpoint using the values from the object (not the keys).
 
      ```typescript
        ...
