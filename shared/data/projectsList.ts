@@ -45,12 +45,12 @@ export const projectList: ProjectDetailProps[] = [
     title: "EasyRequester",
     repository: {
       url: "https://github.com/caganseyrek/EasyRequester",
-      description: " TypeScript-based HTTP client wrapper",
+      description: "TypeScript-based HTTP client wrapper",
       tags: ["typescript", "fetch-api"],
     },
     docs: {
       path: "/projects/EasyRequester",
-      last_modified: new Date("Feb 14 2025"),
+      last_modified: new Date("Feb 15 2025"),
     },
     is_highlighted: false,
   },
@@ -59,7 +59,7 @@ export const projectList: ProjectDetailProps[] = [
     title: "Express-TS Template",
     repository: {
       url: "https://github.com/caganseyrek/express-ts-template",
-      description: "A boilerplate for Express app with TypeScript",
+      description: "A boilerplate for an Express app with TypeScript",
       tags: ["typescript", "expressjs", "oop"],
     },
     docs: null,
