@@ -19,10 +19,6 @@ const Footer = () => {
             target="_blank"
             className="text-nowrap hover:text-foreground transition-colors">
             MIT license
-          </Link>{" "}
-          &mdash;{" "}
-          <Link href="#top" className="text-nowrap hover:text-foreground transition-colors">
-            Back to top
           </Link>
         </span>
       </footer>
