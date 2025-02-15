@@ -172,7 +172,7 @@ interface ClientConfig {
   ```typescript
   const POSSIBLE_STATUS_CODES: number[] = [200, 201, 202, 203, 204, 205, 206];
   ```
-  The additional values we include in the **acceptStatusCodes** array are added to this list of status codes.
+  The additional values we passed to this property are added to this list of status codes above.
 - **isDebugMode**: Debug mode logs the request process to the console. This property determines if the debug mode is toggled.
 
 ### Request Config
