@@ -24,7 +24,7 @@ export const projectList: ProjectDetailProps[] = [
     repository: {
       url: "https://github.com/FlightCoordinator/FlightCoordinator",
       description: "Automated flight manager app",
-      tags: ["spring boot", "next.js", "python"],
+      tags: ["spring boot", "next.js", "fastapi"],
     },
     docs: null,
     is_highlighted: true,
@@ -55,14 +55,17 @@ export const projectList: ProjectDetailProps[] = [
     is_highlighted: false,
   },
   {
-    slug: "express-ts-template",
-    title: "Express-TS Template",
+    slug: "ts-express-next",
+    title: "TS-Express-Next",
     repository: {
-      url: "https://github.com/caganseyrek/express-ts-template",
-      description: "A boilerplate for an Express app with TypeScript",
-      tags: ["typescript", "expressjs", "oop"],
+      url: "https://github.com/caganseyrek/ts-express-next",
+      description: "Monorepo with TypeScript, Express, and Next.js",
+      tags: ["typescript", "express.js", "next.js"],
     },
-    docs: null,
+    docs: {
+      path: "/projects/ts-express-next",
+      last_modified: new Date("Feb 16 2025"),
+    },
     is_highlighted: false,
   },
 ];
