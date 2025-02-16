@@ -48,22 +48,28 @@ const TableOfContents = ({ content }: TocSidebarProps) => {
         </AccordionTrigger>
         <AccordionContent className="flex w-full min-w-0 flex-col p-2 border-t max-h-[300px] overflow-y-auto">
           <ul className="w-full min-w-0 flex flex-col gap-0">
-            {headingNodes.map((node) => {
-              const parsedText: string = TocUtils.parseText(node.text);
-              return (
-                <li key={parsedText}>
-                  <LinkedButton
-                    link={{ href: "#" + parsedText }}
-                    button={{
-                      variant: "ghost",
-                      className: "rounded-sm font-normal w-full h-auto flex justify-start py-2 text-[0.95rem]",
-                    }}>
-                    {node.text}
-                  </LinkedButton>
-                  {node.children && node.children.length > 0 && renderNodes(node.children)}
-                </li>
-              );
-            })}
+            {headingNodes.length === 0 ? (
+              <span className="p-sm text-sm text-muted-foreground text-center">
+                There isn&apos;t any headings in this page
+              </span>
+            ) : (
+              headingNodes.map((node) => {
+                const parsedText: string = TocUtils.parseText(node.text);
+                return (
+                  <li key={parsedText}>
+                    <LinkedButton
+                      link={{ href: "#" + parsedText }}
+                      button={{
+                        variant: "ghost",
+                        className: "rounded-sm font-normal w-full h-auto flex justify-start py-2 text-[0.95rem]",
+                      }}>
+                      {node.text}
+                    </LinkedButton>
+                    {node.children && node.children.length > 0 && renderNodes(node.children)}
+                  </li>
+                );
+              })
+            )}
           </ul>
         </AccordionContent>
       </AccordionItem>
