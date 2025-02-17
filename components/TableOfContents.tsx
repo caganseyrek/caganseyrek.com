@@ -46,7 +46,7 @@ const TableOfContents = ({ content }: TocSidebarProps) => {
             On this page
           </span>
         </AccordionTrigger>
-        <AccordionContent className="flex w-full min-w-0 flex-col p-2 border-t max-h-[400px] overflow-y-auto">
+        <AccordionContent className="flex w-full min-w-0 flex-col p-2 border-t max-h-[350px] overflow-y-auto">
           <ul className="w-full min-w-0 flex flex-col gap-0">
             {headingNodes.length === 0 ? (
               <span className="p-sm text-sm text-muted-foreground text-center">
