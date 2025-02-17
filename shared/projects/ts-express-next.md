@@ -7,37 +7,22 @@ repository:
 
 This is a boilerplate template for building backend applications with Express and TypeScript, frontend applications with Next and Typescript, or full-stack applications with both in a monorepo. It includes essential tools and best practices to help streamline development and maintainability.
 
-## Setup
-
-### Prerequisites
-
-To setup the project locally, ensure following are present on your system/ready to be used:
-
-- Node.js (v20 or higher)
-- MongoDB Database
-- Bash Shell for running provided scripts (This project is developed in a GNU/Linux environment using WSL2 with Ubuntu. However, you can set up and run it on other operating systems by installing the required tools.)
-
-### Installation
+## Installation and Setup
 
 1. Clone the repository
-
-```bash
-git clone https://github.com/caganseyrek/ts-express-next.git
-cd path/to/ts-express-next
-```
-
+   ```bash
+   git clone https://github.com/caganseyrek/ts-express-next.git
+   cd path/to/ts-express-next
+   ```
 2. Install the dependencies
-
-```bash
-pnpm install
-```
-
+   ```bash
+   pnpm install
+   ```
 3. Setup the environment variables. Remove the `.sample` suffix from the `.env.sample` file and put the required variables into the file.
 4. Run the application
-
-```bash
-pnpm dev
-```
+   ```bash
+   pnpm dev
+   ```
 
 ## Features of Next App
 
@@ -204,6 +189,10 @@ src/
 
 - **globals.d.ts**: Contains global type definitions that is shared across the application.
 - **main.ts**: The entry point for the application where express app is initialized and passed into the `appBuilder`.
+
+## Contributing
+
+Feel free to fork this project and create pull requests for improvements. Any issues or feature requests are also welcome!
 
 ## License
 
