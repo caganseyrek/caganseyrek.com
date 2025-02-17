@@ -62,7 +62,10 @@ export const projectList: ProjectDetailProps[] = [
       description: "Monorepo with TypeScript, Express, and Next.js",
       tags: ["typescript", "express.js", "next.js"],
     },
-    docs: null,
+    docs: {
+      path: "/projects/ts-express-next",
+      last_modified: new Date("Feb 17 2025"),
+    },
     is_highlighted: false,
   },
 ];

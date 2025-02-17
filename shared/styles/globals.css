@@ -144,4 +144,10 @@
   article :not(h1):not(h2):not(h3):not(h4) > a {
     @apply underline hover:text-foreground transition-colors;
   }
+  article blockquote {
+    @apply border border-l-[0.35rem] dark:border-transparent bg-accent/90 text-muted-foreground my-3 p-3 rounded-lg;
+  }
+  article blockquote code {
+    @apply bg-border;
+  }
 }
