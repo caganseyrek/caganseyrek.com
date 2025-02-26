@@ -39,11 +39,11 @@ const RootPage = () => {
     <main className="w-[650px] m-auto flex flex-col items-center justify-center gap-md p-lg max-[650px]:w-auto">
       <section className="w-full flex flex-col items-start justify-start gap-md">
         <div className="w-full flex flex-row items-center justify-start gap-md">
-          <h1 className="font-title text-4xl font-bold">Çağan Seyrek</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Çağan Seyrek</h1>
           <Button
             size="icon"
             variant="ghost"
-            className="w-auto h-auto p-1 mt-1 text-foreground"
+            className="w-auto h-auto p-1 mt-xs text-foreground"
             onClick={() => setTheme(getNextTheme(theme))}
             suppressHydrationWarning>
             {theme === "dark" ? <Sun /> : theme === "light" ? <Moon /> : <SunMoon />}

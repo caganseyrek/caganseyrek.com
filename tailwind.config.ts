@@ -7,9 +7,8 @@ const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontFamily: {
-      sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+      sans: ["Geist", ...defaultTheme.fontFamily.sans],
       mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
-      title: ["IM Fell English SC"],
     },
     extend: {
       borderRadius: {

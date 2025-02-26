@@ -9,6 +9,7 @@ interface MetadataBaseProps {
   links: {
     github: string;
     linkedin: string;
+    npm: string;
   };
   image: {
     url: string;
@@ -24,6 +25,7 @@ export const metadataBase: MetadataBaseProps = {
   links: {
     github: "https://github.com/caganseyrek",
     linkedin: "https://www.linkedin.com/in/caganseyrek/",
+    npm: "https://www.npmjs.com/~caganseyrek",
   },
   image: {
     url: "https://caganseyrek.com/images/general_cat.png",
