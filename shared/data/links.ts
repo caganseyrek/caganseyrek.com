@@ -2,7 +2,7 @@ import React from "react";
 import { IconType } from "react-icons";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
-import { Computer, HomeIcon, LucideProps } from "lucide-react";
+import { FileCode, FolderGit2, HomeIcon, LucideProps } from "lucide-react";
 
 import { metadataBase } from "./metadataBase";
 
@@ -21,7 +21,12 @@ export const navLinks: LinkProps[] = [
   {
     label: "Projects",
     link: "/projects",
-    icon: Computer,
+    icon: FolderGit2,
+  },
+  {
+    label: "Snippets",
+    link: "/snippets",
+    icon: FileCode,
   },
 ];
 

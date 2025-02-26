@@ -12,8 +12,8 @@
   },
   "aliases": {
     "components": "@/components",
-    "utils": "@/shared/utils/twUtils",
-    "ui": "@/components/ui-base",
+    "utils": "@/shared/twUtils",
+    "ui": "@/components/base-ui",
     "lib": "@/shared/lib",
     "hooks": "@/shared/hooks"
   },

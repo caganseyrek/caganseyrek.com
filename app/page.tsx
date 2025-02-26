@@ -1,46 +1,116 @@
+"use client";
+
 import React from "react";
 
-import { Metadata } from "next";
+import Link from "next/link";
 
-import Projects from "@/components/Projects";
-import Techstack from "@/components/Techstack";
-import { PageWrapper } from "@/components/ui-base/page-wrapper";
+import { ArrowUpRight, Moon, Sun, SunMoon } from "lucide-react";
+import { useTheme } from "next-themes";
 
-export const metadata: Metadata = { title: "About Me - Çağan Seyrek" };
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/base-ui/accordion";
+import { Button } from "@/components/base-ui/button";
+import { Separator } from "@/components/base-ui/separator";
+import TagList from "@/components/base-ui/tag-list";
 
-const AboutMe = () => {
+import { socialLinks } from "@/shared/data/links";
+import { metadataBase } from "@/shared/data/metadataBase";
+import { projects } from "@/shared/data/projects";
+import techstack from "@/shared/data/techstack";
+
+const getNextTheme = (theme?: string): string => {
+  // hehe
+  if (!theme) {
+    return "system";
+  } else if (theme === "light") {
+    return "dark";
+  } else if (theme === "dark") {
+    return "system";
+  } else if (theme === "system") {
+    return "light";
+  } else {
+    return "system";
+  }
+};
+
+const RootPage = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <PageWrapper className="max-[650px]:gap-lg">
-      <section className="flex flex-row items-start justify-start gap-lg max-[650px]:flex-col max-[650px]:items-center">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/general_cat.webp"
-          width="160"
-          height="160"
-          alt="My Profile Picture"
-          title="My Profile Picture"
-          className="bg-cover rounded-lg select-none"
-        />
-        <div className="flex flex-col items-start justify-start gap-md">
-          <h1 className="text-2xl tracking-tight font-bold leading-tight max-[650px]:m-auto">Hey, I&apos;m Çağan</h1>
-          <span className="text-muted-foreground text-pretty max-[650px]:text-center">
-            I&apos;m a senior-year computer engineering student with a strong passion for full-stack development,
-            software engineering, open-source way of improving technology for everyone. I enjoy exploring different
-            languages, frameworks, and architectural patterns.
-          </span>
-          <span className="text-muted-foreground text-pretty max-[650px]:text-center">
-            Beyond coding, I have a deep interest in history. I love reading and researching historical events, diving
-            into different eras, and exploring significant moments.
-          </span>
+    <main className="w-[650px] m-auto flex flex-col items-center justify-center gap-md p-lg max-[650px]:w-auto">
+      <section className="w-full flex flex-col items-start justify-start gap-md">
+        <div className="w-full flex flex-row items-center justify-start gap-md">
+          <h1 className="font-title text-4xl font-bold">Çağan Seyrek</h1>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="w-auto h-auto p-1 mt-1 text-foreground"
+            onClick={() => setTheme(getNextTheme(theme))}
+            suppressHydrationWarning>
+            {theme === "dark" ? <Sun /> : theme === "light" ? <Moon /> : <SunMoon />}
+          </Button>
+        </div>
+        <div className="text-muted-foreground text-pretty">
+          Hello there! I&apos;m Çağan, a senior-year computer engineering student from Türkiye.
+        </div>
+        <div className="text-muted-foreground text-pretty">
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="techstack">
+              I&apos;m highly interested in{" "}
+              <AccordionTrigger className="text-foreground">full-stack development</AccordionTrigger>, software design
+              and engineering, and open-source development. I also enjoy exploring different languages, frameworks, and
+              architectural patterns.
+              <AccordionContent>
+                <div className="p-md flex flex-col items-start justify-start gap-md">
+                  <div className="flex flex-col items-start justify-start">
+                    <span className="text-foreground font-semibold">Technologies and tools I use regularly</span>
+                    <span className="text-sm">You can hover to see their names</span>
+                  </div>
+                  <TagList contents={{ items: techstack, borderRadius: "small" }} />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+        <div className="text-muted-foreground text-pretty">
+          Beyond coding, I have a deep interest in history. I love reading and researching historical events, diving
+          into different eras, and exploring significant moments.
+        </div>
+        <div className="text-muted-foreground text-pretty">
+          Here are some highlights from my projects (
+          <Link href={metadataBase.links.github + "?tab=repositories"} target="_blank" className="text-foreground">
+            See all on GitHub
+          </Link>
+          )
+        </div>
+        <div className="w-full flex flex-row items-start justify-start gap-md max-[570px]:flex-col">
+          {projects.map((project) => (
+            <div
+              key={project.slug}
+              className="min-w-[calc((100%-15px)/2)] w-[calc((100%-15px)/2)] max-[570px]:min-w-[calc(100%/2)] flex flex-col items-stretch justify-start border dark:border-transparent rounded-md flex-1 bg-accent/80 p-md gap-xs max-[570px]:w-full">
+              <Link
+                href={project.repository.url}
+                target="_blank"
+                className="font-semibold flex flex-row items-center justify-start gap-sm">
+                {project.title}
+                <ArrowUpRight className="w-4 h-4 min-w-4 min-h-4" />
+              </Link>
+              <span className="text-muted-foreground flex flex-1 text-sm">{project.repository.description}</span>
+            </div>
+          ))}
+        </div>
+        <Separator decorative className="rounded-lg" />
+        <div className="flex flex-row items-center justify-center gap-sm">
+          {socialLinks.map((item) => (
+            <Link key={item.label} href={item.link}>
+              <Button>
+                <item.icon /> {item.label}
+              </Button>
+            </Link>
+          ))}
         </div>
       </section>
-      <Techstack />
-      <section className="flex flex-col gap-md w-full">
-        <h2 className="text-xl tracking-tight font-semibold text-center">Highligted Projects</h2>
-        <Projects highlightedOnly />
-      </section>
-    </PageWrapper>
+    </main>
   );
 };
 
-export default AboutMe;
+export default RootPage;

@@ -26,10 +26,6 @@ function manifest(): MetadataRoute.Manifest {
         type: "image/png",
       },
     ],
-    shortcuts: [
-      { name: "Projects", url: "/projects" },
-      { name: "Collaborate", url: "/collaborate" },
-    ],
   };
 }
 

@@ -3,15 +3,15 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/shared/utils/twUtils";
+import { cn } from "@/shared/twUtils";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "border bg-accent text-muted-foreground hover:text-foreground",
-        white: "border bg-background text-muted-foreground hover:text-foreground",
+        default: "border dark:border-transparent bg-accent/80 text-muted-foreground hover:text-foreground",
+        outlined: "border bg-background text-muted-foreground hover:text-foreground",
         ghost: "bg-background text-muted-foreground hover:bg-accent hover:text-foreground",
       },
       size: {

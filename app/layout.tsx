@@ -2,8 +2,7 @@ import React, { type ReactNode } from "react";
 
 import { Metadata } from "next";
 
-import Footer from "@/components/partial/Footer";
-import Header from "@/components/partial/Header";
+import Providers from "@/components/Providers";
 
 import { headMetadata, jsonLd } from "@/shared/data/metadataBase";
 import "@/shared/styles/globals.css";
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
 
 const MainLayout = ({ children }: LayoutProps) => {
   return (
-    <html className="scroll-smooth">
+    <html className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/images/favicon.png" sizes="any" />
         <script
@@ -33,9 +32,10 @@ const MainLayout = ({ children }: LayoutProps) => {
         />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          {/* <div className="border border-t-0 bg-accent rounded-b-md p-md">123</div> */}
+          {children}
+        </Providers>
       </body>
     </html>
   );
