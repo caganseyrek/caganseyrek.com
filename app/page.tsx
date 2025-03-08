@@ -45,7 +45,7 @@ const RootPage = () => {
       <ContentSection className="flex-row max-base:flex-col max-base:items-center">
         <HomepageContainer>
           <HomepageSecondaryTitle>What I Work With</HomepageSecondaryTitle>
-          <HomepageParagraph>Here is my techstack and my main dev environment is WSL Ubuntu.</HomepageParagraph>
+          <HomepageParagraph>Here is my techstack. My main dev environment is WSL with Ubuntu.</HomepageParagraph>
           <div className="flex flex-row flex-wrap items-start justify-start gap-xs max-base:justify-center">
             {techstack.map((item) => (
               <TechLabel key={item.key}>
