@@ -92,66 +92,7 @@
   body {
     @apply bg-background min-w-[350px] min-h-dvh m-0 p-0 overflow-x-auto flex flex-col w-full;
   }
-  article {
-    @apply flex flex-col gap-sm;
-  }
-  article h1 {
-    @apply text-3xl font-semibold tracking-tight mt-4;
-  }
-  article h2 {
-    @apply text-xl font-semibold tracking-tight mt-4;
-  }
-  article h3 {
-    @apply text-lg font-semibold tracking-tight mt-4;
-  }
-  article h4 {
-    @apply font-semibold tracking-tight mt-4;
-  }
-  article p {
-    @apply m-0 p-0 text-pretty text-muted-foreground;
-  }
-  article ul,
-  article ol {
-    @apply px-[20px] text-muted-foreground;
-  }
-  article ul {
-    @apply list-[square];
-  }
-  article ol {
-    @apply list-decimal;
-  }
-  article ul li,
-  article ol li {
-    @apply py-[2px];
-  }
-  article ul li::marker,
-  article ol li::marker {
-    @apply font-semibold text-foreground;
-  }
-  article pre {
-    @apply rounded-b-lg text-sm font-mono py-md;
-  }
-  article ul li p,
-  article ol li p {
-    @apply indent-0 m-0 inline;
-  }
-  article ul li b,
-  article ol li b,
-  article ul li strong,
-  article ol li strong {
-    @apply font-semibold text-foreground;
-  }
-  article :not(h1):not(h2):not(h3):not(h4) > a {
-    @apply underline hover:text-foreground transition-colors;
-  }
-  article blockquote {
-    @apply border border-l-[0.35rem] dark:border-transparent bg-accent/90 text-muted-foreground my-3 p-3 rounded-lg;
-  }
-  article blockquote code {
-    @apply bg-border;
-  }
 }
-
 @layer base {
   * {
     @apply border-border outline-ring/50;

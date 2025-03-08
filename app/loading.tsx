@@ -1,12 +1,23 @@
 import React from "react";
 
+import { Metadata } from "next";
+
 import { Loader } from "lucide-react";
+
+import { CustomPageFullContainer } from "@/components/layout/partials/PagePartials";
+
+import { headMetadata } from "@/shared/data/metadata";
+
+export const metadata: Metadata = {
+  ...headMetadata,
+  title: "Loading...",
+};
 
 const LoadingPage = () => {
   return (
-    <div className="w-[100vw] h-[100vh] fixed top-0 left-00 flex items-center justify-center">
+    <CustomPageFullContainer>
       <Loader className="animate-spin" />
-    </div>
+    </CustomPageFullContainer>
   );
 };
 

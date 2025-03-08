@@ -1,44 +1,38 @@
-import React from "react";
-import { IconType } from "react-icons";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
-import { FileCode, FolderGit2, HomeIcon, LucideProps } from "lucide-react";
+import { Box, CodeXml, Home } from "lucide-react";
 
-import { metadataBase } from "./metadataBase";
+import { Data } from "@/types/globals";
 
-interface LinkProps {
-  label: string;
-  link: string;
-  icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>> | IconType;
-}
+import { coreMetadata } from "./metadata";
 
-export const navLinks: LinkProps[] = [
+export const navLinks: Data.LinkProps[] = [
   {
-    label: "About Me",
+    label: "Home",
     link: "/",
-    icon: HomeIcon,
+    icon: Home,
   },
   {
     label: "Projects",
     link: "/projects",
-    icon: FolderGit2,
+    icon: Box,
   },
   {
     label: "Snippets",
     link: "/snippets",
-    icon: FileCode,
+    icon: CodeXml,
   },
 ];
 
-export const socialLinks: LinkProps[] = [
+export const socialLinks: Data.LinkProps[] = [
   {
     label: "GitHub",
-    link: metadataBase.links.github,
+    link: coreMetadata.links.github,
     icon: SiGithub,
   },
   {
     label: "LinkedIn",
-    link: metadataBase.links.linkedin,
+    link: coreMetadata.links.linkedin,
     icon: SiLinkedin,
   },
 ];

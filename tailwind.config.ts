@@ -16,6 +16,14 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      screens: {
+        lg: "900px",
+        md: "720px",
+        base: "800px",
+        sm: "650px",
+        xs: "550px",
+        "2xs": "400px",
+      },
       padding: {
         lg: "30px",
         md: "15px",

@@ -1,14 +1,14 @@
 import { type MetadataRoute } from "next";
 
-import { metadataBase } from "@/shared/data/metadataBase";
+import { coreMetadata } from "@/shared/data/metadata";
 
 function manifest(): MetadataRoute.Manifest {
   return {
-    id: metadataBase.url,
-    name: metadataBase.title,
-    short_name: metadataBase.title,
-    description: metadataBase.desc,
-    scope: metadataBase.url,
+    id: coreMetadata.url,
+    name: coreMetadata.title,
+    short_name: coreMetadata.title,
+    description: coreMetadata.desc,
+    scope: coreMetadata.url,
     start_url: "/",
     display: "standalone",
     orientation: "natural",

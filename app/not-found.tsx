@@ -6,22 +6,32 @@ import Link from "next/link";
 import { Origami } from "lucide-react";
 
 import { Button } from "@/components/base-ui/button";
-import { PageBody, PageTitle, PageWrapper } from "@/components/PageElements";
+import {
+  CustomPageBody,
+  CustomPageContainer,
+  CustomPageDescription,
+  CustomPageTitle,
+} from "@/components/layout/partials/PagePartials";
 
-export const metadata: Metadata = { title: "Not Found" };
+import { headMetadata } from "@/shared/data/metadata";
+
+export const metadata: Metadata = {
+  ...headMetadata,
+  title: "Not Found",
+};
 
 const NotFoundPage = () => {
   return (
-    <PageWrapper>
-      <PageBody>
+    <CustomPageContainer>
+      <CustomPageBody>
         <Origami className="text-foreground w-[34px] h-[38px]" />
-        <PageTitle>Oops...</PageTitle>
-        <span className="text-muted-foreground">Looks like you&apos;ve reached an empty space.</span>
-      </PageBody>
+        <CustomPageTitle>Oops...</CustomPageTitle>
+        <CustomPageDescription>Looks like you&apos;ve reached an empty space.</CustomPageDescription>
+      </CustomPageBody>
       <Link href={"/"}>
         <Button>Return to Homepage</Button>
       </Link>
-    </PageWrapper>
+    </CustomPageContainer>
   );
 };
 

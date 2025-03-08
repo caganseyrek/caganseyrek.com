@@ -8,22 +8,32 @@ import Link from "next/link";
 import { Puzzle } from "lucide-react";
 
 import { Button } from "@/components/base-ui/button";
-import { PageBody, PageTitle, PageWrapper } from "@/components/PageElements";
+import {
+  CustomPageBody,
+  CustomPageContainer,
+  CustomPageDescription,
+  CustomPageTitle,
+} from "@/components/layout/partials/PagePartials";
 
-export const metadata: Metadata = { title: "Error..." };
+import { headMetadata } from "@/shared/data/metadata";
+
+export const metadata: Metadata = {
+  ...headMetadata,
+  title: "Error...",
+};
 
 const ErrorPage = () => {
   return (
-    <PageWrapper>
-      <PageBody>
+    <CustomPageContainer>
+      <CustomPageBody>
         <Puzzle className="text-foreground w-[34px] h-[38px]" />
-        <PageTitle>Oops...</PageTitle>
-        <span className="text-muted-foreground">Looks like some error occurred. I&apos;m really sorry...</span>
-      </PageBody>
+        <CustomPageTitle>Uhhh...</CustomPageTitle>
+        <CustomPageDescription>Looks like some error occurred. I&apos;m really sorry.</CustomPageDescription>
+      </CustomPageBody>
       <Link href={"/"}>
         <Button>Return to Homepage</Button>
       </Link>
-    </PageWrapper>
+    </CustomPageContainer>
   );
 };
 

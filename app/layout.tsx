@@ -1,15 +1,15 @@
-import React, { type ReactNode } from "react";
+import React from "react";
 
 import { Metadata } from "next";
 
+import { ContentWrapper } from "@/components/layout/Content";
+import Header from "@/components/layout/Header";
 import Providers from "@/components/Providers";
 
-import { headMetadata, jsonLd } from "@/shared/data/metadataBase";
+import { headMetadata, jsonLd } from "@/shared/data/metadata";
 import "@/shared/styles/globals.css";
 
-interface LayoutProps {
-  children: ReactNode;
-}
+import { Components as Layout } from "@/types/globals";
 
 export const metadata: Metadata = {
   title: {
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   ...headMetadata,
 };
 
-const MainLayout = ({ children }: LayoutProps) => {
+const MainLayout = ({ children }: Layout.BaseWrapperProps) => {
   return (
-    <html className="scroll-smooth" suppressHydrationWarning>
+    <html className="scroll-smooth" lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/images/favicon.png" sizes="any" />
         <script
@@ -33,8 +33,10 @@ const MainLayout = ({ children }: LayoutProps) => {
       </head>
       <body>
         <Providers>
-          {/* <div className="border border-t-0 bg-accent rounded-b-md p-md">123</div> */}
-          {children}
+          <main>
+            <Header />
+            <ContentWrapper>{children}</ContentWrapper>
+          </main>
         </Providers>
       </body>
     </html>
