@@ -2,18 +2,17 @@ import React from "react";
 
 import { Metadata } from "next";
 
-import { ContentSection } from "@/components/layout/Content";
-import { MainPageHeader } from "@/components/layout/partials/PagePartials";
+import { ContentSection, ContentTitle, ContentWrapper } from "@/components/partials/ContentPartials";
 import {
   ProjectContainer,
   ProjectDescription,
   ProjectHeader,
   ProjectTechs,
   ProjectTitle,
-} from "@/components/layout/partials/ProjectPartials";
+} from "@/components/partials/ProjectPartials";
 
-import { projects } from "@/shared/content/projects";
-import { headMetadata } from "@/shared/data/metadata";
+import { projects } from "@/resources/content/projects";
+import { headMetadata } from "@/resources/data/metadata";
 
 export const metadata: Metadata = {
   ...headMetadata,
@@ -23,9 +22,9 @@ export const metadata: Metadata = {
 
 const ProjectsPage = () => {
   return (
-    <>
-      <MainPageHeader title="Project Highlights" subtitle="Some open-source projects from my GitHub profile" />
-      <ContentSection className="gap-y-sm gap-x-sm flex-row flex-wrap items-stretch max-xs:flex-col">
+    <ContentWrapper>
+      <ContentTitle title="Project Highlights" subtitle="Some open-source projects from my GitHub profile" />
+      <ContentSection className="gap-y-sm gap-x-sm flex-row flex-wrap items-stretch max-sm:flex-col">
         {projects.map((project) => (
           <ProjectContainer key={project.slug}>
             <ProjectHeader>
@@ -36,7 +35,7 @@ const ProjectsPage = () => {
           </ProjectContainer>
         ))}
       </ContentSection>
-    </>
+    </ContentWrapper>
   );
 };
 

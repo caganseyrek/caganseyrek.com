@@ -7,7 +7,7 @@ const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontFamily: {
-      sans: ["Geist", ...defaultTheme.fontFamily.sans],
+      sans: ["Inter", ...defaultTheme.fontFamily.sans],
       mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
     },
     extend: {
@@ -17,12 +17,9 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       screens: {
-        lg: "900px",
-        md: "720px",
-        base: "800px",
         sm: "650px",
-        xs: "550px",
-        "2xs": "400px",
+        md: "780px",
+        base: "830px",
       },
       padding: {
         lg: "30px",
@@ -82,16 +79,6 @@ const config: Config = {
           "3": "hsl(var(--chart-3))",
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
         },
       },
       keyframes: {

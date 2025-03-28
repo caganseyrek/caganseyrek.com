@@ -5,8 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
-        disallow: "/images/pixel_art/",
+        disallow: "/images/",
       },
     ],
     sitemap: "https://caganseyrek.com/sitemap.xml",

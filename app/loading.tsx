@@ -4,9 +4,9 @@ import { Metadata } from "next";
 
 import { Loader } from "lucide-react";
 
-import { CustomPageFullContainer } from "@/components/layout/partials/PagePartials";
+import { CustomPageContainer } from "@/components/partials/CustomPagePartials";
 
-import { headMetadata } from "@/shared/data/metadata";
+import { headMetadata } from "@/resources/data/metadata";
 
 export const metadata: Metadata = {
   ...headMetadata,
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 
 const LoadingPage = () => {
   return (
-    <CustomPageFullContainer>
+    <CustomPageContainer>
       <Loader className="animate-spin" />
-    </CustomPageFullContainer>
+    </CustomPageContainer>
   );
 };
 

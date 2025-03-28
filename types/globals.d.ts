@@ -1,29 +1,21 @@
 import React from "react";
 import { IconType } from "react-icons";
 
-import { LucideProps } from "lucide-react";
-
 export namespace Data {
   export interface CoreMetadataProps {
-    title: string;
-    desc: string;
-    url: string;
-    links: {
-      github: string;
-      linkedin: string;
-      npm: string;
-    };
-    image: {
-      url: string;
-      relative_path: string;
-      alt_text: string;
-    };
+    site_title: string;
+    description: string;
+    base_site_url: string;
+    social_links: { github_profile: string; linkedin_profile: string };
+    preview_image: { absolute_url: string; relative_path: string; alt_text: string };
   }
   export interface LinkProps {
+    key: string;
     label: string;
     link: string;
-    icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>> | IconType;
+    icon: IconType;
   }
+  export type TechstackProps = Omit<LinkProps, "link">;
 }
 
 export namespace Components {
@@ -31,57 +23,54 @@ export namespace Components {
     children?: React.ReactNode;
     className?: string;
   }
-  export interface HeaderMenuProps {
-    items: Data.LinkProps[];
-  }
-  export interface PageHeaderProps {
-    title: string;
-    subtitle?: string;
-  }
-  export interface ProjectTitleProps extends BaseWrapperProps {
-    link: string;
-  }
-  export interface ProjectTechsProps {
-    list: string[];
-  }
   export interface CodeBlockProps {
     language: string;
     code: string;
   }
+  export namespace Partials {
+    export interface PageHeaderProps {
+      title: string;
+      subtitle?: string;
+    }
+    export interface ProjectTitleProps extends BaseWrapperProps {
+      link: string;
+    }
+    export interface ProjectTechsProps {
+      list: string[];
+    }
+    export type HomepageTechstackProps = BaseWrapperProps & {
+      list: Data.TechstackProps[];
+    };
+  }
 }
 
 export namespace Content {
-  export type SnippetLanguages = "TypeScript" | "JavaScript" | "Java" | "CSharp" | "bash" | "JSON";
-  interface GuideSectionProps {
-    key: string;
-    title: string;
-    anchor: string;
-    paragraphs: React.ReactNode[];
-  }
-  export interface ProjectDetailProps {
+  export interface ProjectProps {
     slug: string;
     title: string;
     description: string;
     repository: string;
     tech: string[];
   }
-  interface SnippetProps {
-    key: string;
-    label: string;
-    description: string;
-    language: SnippetLanguages;
-    code: string;
+  export namespace Snippets {
+    export type SnippetLanguages = "TypeScript" | "JavaScript" | "Java" | "C#" | "bash" | "JSON";
+    export interface SnippetProps {
+      key: string;
+      label: string;
+      description: string;
+      language: SnippetLanguages;
+      code: string;
+    }
   }
-  interface LanguageDetailsProps {
-    [key: string]: {
-      name: string;
-      bg_color: string;
-    };
-  }
-  export interface TocProps {
-    key: string;
-    label: string;
-    anchor: string;
-    sublist: TocProps[];
-  }
+  // export namespace Guides {
+  //   export interface GuideSectionProps {
+  //     key: string;
+  //     label: string;
+  //     guides: GuideProps[];
+  //   }
+  //   export interface GuideProps extends Omit<Data.LinkProps, "icon"> {
+  //     created_at: Date;
+  //     last_edited_at: Date;
+  //   }
+  // }
 }

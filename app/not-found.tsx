@@ -5,15 +5,15 @@ import Link from "next/link";
 
 import { Origami } from "lucide-react";
 
-import { Button } from "@/components/base-ui/button";
+import { Button } from "@/components/base/button";
 import {
   CustomPageBody,
   CustomPageContainer,
   CustomPageDescription,
   CustomPageTitle,
-} from "@/components/layout/partials/PagePartials";
+} from "@/components/partials/CustomPagePartials";
 
-import { headMetadata } from "@/shared/data/metadata";
+import { headMetadata } from "@/resources/data/metadata";
 
 export const metadata: Metadata = {
   ...headMetadata,

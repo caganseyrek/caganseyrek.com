@@ -1,21 +1,21 @@
 import { MetadataRoute } from "next";
 
-import { coreMetadata } from "@/shared/data/metadata";
+import { coreMetadata } from "@/resources/data/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: coreMetadata.url,
+      url: coreMetadata.base_site_url,
       lastModified: new Date(),
       changeFrequency: "monthly",
     },
     {
-      url: coreMetadata.url + "/projects",
+      url: coreMetadata.base_site_url + "/projects",
       lastModified: new Date(),
       changeFrequency: "monthly",
     },
     {
-      url: coreMetadata.url + "/snippets",
+      url: coreMetadata.base_site_url + "/snippets",
       lastModified: new Date(),
       changeFrequency: "monthly",
     },
