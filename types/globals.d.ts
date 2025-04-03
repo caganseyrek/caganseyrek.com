@@ -23,9 +23,12 @@ export namespace Components {
     children?: React.ReactNode;
     className?: string;
   }
-  export interface CodeBlockProps {
-    language: string;
-    code: string;
+  export namespace CodeBlock {
+    export interface CodeBlockProps {
+      language: string;
+      code: string;
+    }
+    export type CopyButtonProps = Pick<CodeBlockProps, "code"> & { className?: string };
   }
   export namespace Partials {
     export interface PageHeaderProps {

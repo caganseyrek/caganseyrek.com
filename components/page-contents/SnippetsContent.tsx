@@ -2,24 +2,25 @@
 
 import React from "react";
 
-import { Trash2 } from "lucide-react";
+import { Info, Trash2 } from "lucide-react";
 
-import { snippets } from "@/resources/content/snippets";
-
-import { cn } from "@/shared/utils";
-
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../base/accordion";
-import { Button } from "../base/button";
-import { Input } from "../base/input";
-import { CodeBlock } from "../CodeDisplay";
-import { ContentSection } from "../partials/ContentPartials";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/base/accordion";
+import { Button } from "@/components/base/button";
+import { Input } from "@/components/base/input";
+import { CodeBlock } from "@/components/code-display/CodeDisplay";
+import CopyButton from "@/components/code-display/CopyButton";
+import { ContentSection } from "@/components/partials/ContentPartials";
 import {
   SnippetContainer,
   SnippetDescription,
   SnippetHeader,
   SnippetLanguage,
   SnippetTitle,
-} from "../partials/SnippetPartials";
+} from "@/components/partials/SnippetPartials";
+
+import { cn } from "@/shared/utils";
+
+import { snippets } from "@/resources/content/snippets";
 
 const SnippetsContent = () => {
   const [searchParams, setSearchParams] = React.useState<string>("");
@@ -34,17 +35,22 @@ const SnippetsContent = () => {
 
   return (
     <>
-      <div className="w-full flex flex-row items-center justify-center gap-sm">
-        <Input
-          value={searchParams}
-          onChange={(e) => setSearchParams(e.currentTarget.value)}
-          placeholder="Type to search snippets..."
-          className="w-full"
-        />
-        <Button size="icon" variant="outlined" onClick={() => setSearchParams("")}>
-          <Trash2 />
-          <span className="sr-only">Clear search parameters</span>
-        </Button>
+      <div className="w-full flex flex-col items-center justify-center gap-sm">
+        <div className="w-full flex flex-row items-center justify-center gap-sm">
+          <Input
+            value={searchParams}
+            onChange={(e) => setSearchParams(e.currentTarget.value)}
+            placeholder="Type to filter snippets..."
+            className="w-full"
+          />
+          <Button size="icon" variant="outlined" onClick={() => setSearchParams("")}>
+            <Trash2 />
+            <span className="sr-only">Clear search parameters</span>
+          </Button>
+        </div>
+        <div className="w-full py-sm px-md text-sm rounded-lg flex flex-row items-center justify-start gap-md border border-container-border text-foreground-muted [&>svg]:size-4 select-none">
+          <Info /> Each snippet has a &quot;Copy to clipboard&quot; button at the bottom.
+        </div>
       </div>
       <ContentSection>
         <Accordion type="single" collapsible>
@@ -71,6 +77,7 @@ const SnippetsContent = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <CodeBlock language={snippet.language} code={snippet.code} />
+                  <CopyButton code={snippet.code} />
                 </AccordionContent>
               </AccordionItem>
             ))}
