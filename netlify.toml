@@ -3,6 +3,9 @@
   to = "/index.html"
   status = 200
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 [[headers]]
   for = "/images/*"
   [headers.values]
