@@ -229,7 +229,7 @@ export interface HeadingNode extends Heading {
   children: HeadingNode[];
 }
 
-class Toc {
+class TocGenerator {
   private constructor() {}
 
   private static parseHeadings(headingsArray: string[]): Heading[] {
@@ -247,7 +247,7 @@ class Toc {
   }
 
   // Extract headings from a text and pass them to this method
-  public static generateNodes(headingsArray: string[]): HeadingNode[] {
+  public static generate(headingsArray: string[]): HeadingNode[] {
     const parsedHeadings: Heading[] = this.parseHeadings(headingsArray);
     const generatedNode: HeadingNode[] = [];
     const stack: HeadingNode[] = [];
@@ -277,56 +277,30 @@ class Toc {
 export default Toc;`,
   },
   {
-    key: "tsconfig",
-    label: "TypeScript Config",
-    description: "A tsconfig file for using as a starting point",
-    language: "JSON",
-    code: `{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "compilerOptions": {
-    "strict": true,
-    "target": "ES2022",
-    "module": "ESNext",
-    "moduleDetection": "force",
-    "moduleResolution": "node",
-    "lib": ["es2022", "DOM", "DOM.Iterable"],
-    "allowJs": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": false,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "allowUnreachableCode": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [{ "name": "next" }],
-    "paths": { "@/*": ["./*"] }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "postcss.config.js"],
-  "exclude": ["node_modules"]
-}`,
-  },
-  {
     key: "eslintconfig",
     label: "ESLint Config",
     description: "A sensible config file ESLint with TypeScript-Eslint's recommended rules",
     language: "JavaScript",
-    code: `import eslint from "@eslint/js";
+    code: `import js from "@eslint/js";
+import eslintConfigPrettier from "eslint-config-prettier";
+import pluginReact from "eslint-plugin-react";
+import { defineConfig } from "eslint/config";
+import globals from "globals";
 import tseslint from "typescript-eslint";
 
-export default [
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
+export default defineConfig([
+  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
+  },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+  },
   {
     rules: {
       "no-alert": "warn",
@@ -354,7 +328,10 @@ export default [
       quotes: ["error", "double", { avoidEscape: true }],
     },
   },
-];`,
+  { ...eslintConfigPrettier },
+  tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+]);`,
   },
   {
     key: "prettierconfig",
