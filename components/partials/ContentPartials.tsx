@@ -23,7 +23,7 @@ const ContentTitle = ({ title, subtitle }: Components.Partials.PageHeaderProps) 
   return (
     <div className="flex flex-col items-start justify-start gap-xs">
       <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
-      {subtitle && <span className="text-muted-foreground">{subtitle}</span>}
+      {subtitle && <span className="text-foreground-muted">{subtitle}</span>}
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import React from "react";
 
+import { ContentWrapper } from "@/components/partials/ContentPartials";
+
 import { cn } from "@/shared/utils";
 
 import { Components } from "@/types/globals";
-
-import { ContentWrapper } from "./ContentPartials";
 
 const CustomPageContainer = ({ children, className }: Components.BaseWrapperProps) => {
   return (
@@ -20,7 +20,7 @@ const CustomPageTitle = ({ children, className }: Components.BaseWrapperProps) =
 };
 
 const CustomPageDescription = ({ children, className }: Components.BaseWrapperProps) => {
-  return <span className={cn("text-muted-foreground", className)}>{children}</span>;
+  return <span className={cn("text-foreground-muted", className)}>{children}</span>;
 };
 
 const CustomPageBody = ({ children, className }: Components.BaseWrapperProps) => {

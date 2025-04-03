@@ -21,11 +21,11 @@ const HomepageContainer = ({ children, className }: Components.BaseWrapperProps)
 };
 
 const HomepagePrimaryTitle = ({ children, className }: Components.BaseWrapperProps) => {
-  return <h1 className={cn("text-neutral-200 w-full text-2xl font-semibold tracking-tight", className)}>{children}</h1>;
+  return <h1 className={cn("text-foreground w-full text-2xl font-semibold tracking-tight", className)}>{children}</h1>;
 };
 
 const HomepageParagraph = ({ children, className }: Components.BaseWrapperProps) => {
-  return <span className={cn("w-full text-neutral-400 text-pretty", className)}>{children}</span>;
+  return <span className={cn("w-full text-foreground-muted text-pretty", className)}>{children}</span>;
 };
 
 const HomepageTechstack = ({ className, list }: Components.Partials.HomepageTechstackProps) => {
@@ -38,7 +38,7 @@ const HomepageTechstack = ({ className, list }: Components.Partials.HomepageTech
             "w-[calc((100%-20px)/5)] h-9 min-h-9 p-sm rounded-md",
             "flex flex-row items-center justify-start gap-sm",
             "text-sm font-medium select-none",
-            "border border-neutral-700/40 bg-neutral-800/55 text-neutral-400",
+            "border border-container-border bg-container-background text-foreground-muted",
             "max-md:w-[calc((100%-15px)/4)] max-sm:w-[calc((100%-10px)/3)] max-[520px]:w-[calc((100%-5px)/2)]",
             className,
           )}>

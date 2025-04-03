@@ -7,11 +7,7 @@ import { usePathname } from "next/navigation";
 
 import { Menu } from "lucide-react";
 
-import { mainMenuLinks, socialLinks } from "@/resources/data/links";
-
-import { cn } from "@/shared/utils";
-
-import { Button } from "./base/button";
+import { Button } from "@/components/base/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,7 +15,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./base/dropdown-menu";
+} from "@/components/base/dropdown-menu";
+
+import { cn } from "@/shared/utils";
+
+import { mainMenuLinks, socialLinks } from "@/resources/data/links";
 
 const MobileNav = () => {
   const pathname: string = usePathname();
@@ -28,7 +28,7 @@ const MobileNav = () => {
     <div className="hidden max-sm:block">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button className="hover:text-orange-400">
+          <Button className="hover:text-foreground-hover">
             Menu <Menu />
           </Button>
         </DropdownMenuTrigger>
@@ -39,7 +39,10 @@ const MobileNav = () => {
             <DropdownMenuItem
               key={item.key}
               asChild
-              className={cn("cursor-pointer", pathname === item.link && "text-orange-400 hover:text-orange-200")}>
+              className={cn(
+                "cursor-pointer",
+                pathname === item.link && "text-foreground-hover hover:text-foreground-active-hover",
+              )}>
               <Link href={item.link}>{item.label}</Link>
             </DropdownMenuItem>
           ))}

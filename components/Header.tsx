@@ -7,13 +7,12 @@ import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/base/button";
 import { Separator } from "@/components/base/separator";
-
-import { mainMenuLinks, socialLinks } from "@/resources/data/links";
+import MobileNav from "@/components/MobileNav";
+import { HeaderLogo, HeaderRightSection, HeaderWrapper } from "@/components/partials/HeaderPartials";
 
 import { cn } from "@/shared/utils";
 
-import MobileNav from "./MobileNav";
-import { HeaderLogo, HeaderRightSection, HeaderWrapper } from "./partials/HeaderPartials";
+import { mainMenuLinks, socialLinks } from "@/resources/data/links";
 
 const Header = () => {
   const pathname: string = usePathname();
@@ -23,15 +22,16 @@ const Header = () => {
       <HeaderLogo />
       <HeaderRightSection>
         {mainMenuLinks.map((item) => (
-          <Link key={item.label} href={item.link}>
-            <Button className={cn(pathname === item.link && "text-orange-400 hover:text-orange-200")}>
+          <Link key={item.label} href={item.link} className="cursor-pointer">
+            <Button
+              className={cn(pathname === item.link && "text-foreground-hover hover:text-foreground-active-hover")}>
               {item.label}
             </Button>
           </Link>
         ))}
         <Separator decorative orientation="vertical" className="h-6 mx-sm" />
         {socialLinks.map((item) => (
-          <Link key={item.label} href={item.link} target="_blank">
+          <Link key={item.label} href={item.link} target="_blank" className="cursor-pointer">
             <Button size="icon">
               <item.icon /> <span className="sr-only">{item.label}</span>
             </Button>

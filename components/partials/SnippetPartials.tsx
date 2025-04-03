@@ -22,16 +22,17 @@ const SnippetHeader = ({ children, className }: Components.BaseWrapperProps) => 
 };
 
 const SnippetTitle = ({ children, className }: Components.BaseWrapperProps) => {
-  return <span className={cn("font-medium tracking-tight text-neutral-200", className)}>{children}</span>;
+  return <span className={cn("font-medium tracking-tight text-foreground", className)}>{children}</span>;
 };
 
 const SnippetDescription = ({ children, className }: Components.BaseWrapperProps) => {
-  return <span className={cn("text-sm text-neutral-400", className)}>{children}</span>;
+  return <span className={cn("text-sm text-foreground-muted", className)}>{children}</span>;
 };
 
 const SnippetLanguage = ({ children, className }: Components.BaseWrapperProps) => {
   return (
-    <span className={cn("rounded-sm bg-neutral-700/40 text-neutral-400 text-sm px-sm py-xs", className)}>
+    <span
+      className={cn("rounded-sm bg-container-label-background text-foreground-muted text-sm px-sm py-xs", className)}>
       {children}
     </span>
   );

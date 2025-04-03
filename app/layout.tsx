@@ -4,9 +4,9 @@ import { Metadata } from "next";
 
 import Header from "@/components/Header";
 
-import { headMetadata, jsonLd } from "@/resources/data/metadata";
-
 import "@/shared/styles/globals.css";
+
+import { headMetadata, jsonLd } from "@/resources/data/metadata";
 
 import { Components as Layout } from "@/types/globals";
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const MainLayout = ({ children }: Layout.BaseWrapperProps) => {
   return (
-    <html className="scroll-smooth" lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/images/favicon.png" sizes="any" />
         <script

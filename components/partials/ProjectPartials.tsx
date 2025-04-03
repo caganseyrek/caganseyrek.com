@@ -14,7 +14,7 @@ const ProjectContainer = ({ className, children }: Components.BaseWrapperProps) 
       className={cn(
         "min-w-[calc((100%-7px)/2)] max-w-[calc((100%-7px)/2)]",
         "flex flex-col items-start justify-start gap-md",
-        "border border-neutral-700/40 bg-neutral-800/55 text-neutral-400",
+        "border border-container-border bg-container-background text-foreground-muted",
         "p-md rounded-lg",
         "max-sm:min-w-full max-sm:max-w-full",
         className,
@@ -34,7 +34,7 @@ const ProjectTitle = ({ children, className, link }: Components.Partials.Project
       href={link}
       target="_blank"
       className={cn(
-        "text-lg font-medium tracking-tight text-neutral-200 hover:text-orange-400 transition-colors",
+        "text-lg font-medium tracking-tight text-foreground hover:text-foreground-hover transition-colors",
         "flex flex-row items-center justify-start gap-sm",
         className,
       )}>
@@ -44,7 +44,7 @@ const ProjectTitle = ({ children, className, link }: Components.Partials.Project
 };
 
 const ProjectDescription = ({ children, className }: Components.BaseWrapperProps) => {
-  return <span className={cn("text-sm text-neutral-400 flex-1", className)}>{children}</span>;
+  return <span className={cn("text-sm text-foreground-muted flex-1", className)}>{children}</span>;
 };
 
 const ProjectTechs = ({ list }: Components.Partials.ProjectTechsProps) => {
@@ -53,7 +53,7 @@ const ProjectTechs = ({ list }: Components.Partials.ProjectTechsProps) => {
       {list.map((item) => (
         <span
           key={item}
-          className="flex flex-row items-center justify-center gap-sm px-sm py-xs text-sm font-medium tracking-tight rounded-sm bg-neutral-700/40 text-neutral-400">
+          className="flex flex-row items-center justify-center gap-sm px-sm py-xs text-sm font-medium tracking-tight rounded-sm bg-container-label-background text-foreground-muted">
           {item}
         </span>
       ))}
