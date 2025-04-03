@@ -1,17 +1,24 @@
-import { FlatCompat } from "@eslint/eslintrc";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+import js from "@eslint/js";
+import eslintConfigPrettier from "eslint-config-prettier";
+import pluginReact from "eslint-plugin-react";
+import { defineConfig } from "eslint/config";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.config({
-    extends: ["next/core-web-vitals", "next/typescript"],
+export default defineConfig([
+  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
+  },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+  },
+  {
     rules: {
       "no-alert": "warn",
       "no-console": "warn",
@@ -37,7 +44,8 @@ const eslintConfig = [
       "no-multiple-empty-lines": ["error", { max: 2, maxEOF: 1 }],
       quotes: ["error", "double", { avoidEscape: true }],
     },
-  }),
-];
-
-export default eslintConfig;
+  },
+  { ...eslintConfigPrettier },
+  tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+]);
