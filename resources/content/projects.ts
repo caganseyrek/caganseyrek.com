@@ -9,10 +9,17 @@ export const projects: Content.ProjectProps[] = [
     tech: ["spring boot", "next.js", "fastapi", "postgresql"],
   },
   {
+    slug: "tarihsever.com",
+    title: "tarihsever.com",
+    description: "A history website mainly about colonialism",
+    repository: "https://github.com/caganseyrek/tarihsever.com",
+    tech: ["next.js", "typescript", "mdx"],
+  },
+  {
     slug: "EasyRequester",
     title: "EasyRequester",
     description: "TypeScript-based HTTP client wrapper",
-    repository: "https://github.com/caganseyrek/WalletTuner",
+    repository: "https://github.com/caganseyrek/EasyRequester",
     tech: ["fetch-api", "typescript"],
   },
   {
