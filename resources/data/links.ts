@@ -1,6 +1,6 @@
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
-import { BookMarked, Box, CodeXml, Home } from "lucide-react";
+import { Box, CodeXml, Home } from "lucide-react";
 
 import { Data } from "@/types/globals";
 
