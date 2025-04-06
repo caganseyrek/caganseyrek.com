@@ -11,8 +11,8 @@ import {
   ProjectTitle,
 } from "@/components/partials/ProjectPartials";
 
-import { projects } from "@/resources/content/projects";
-import { headMetadata } from "@/resources/data/metadata";
+import { projects } from "@/contents/data/projects";
+import { headMetadata } from "@/contents/data/metadata";
 
 export const metadata: Metadata = {
   ...headMetadata,

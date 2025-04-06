@@ -6,7 +6,7 @@ import { Loader } from "lucide-react";
 
 import { CustomPageContainer } from "@/components/partials/CustomPagePartials";
 
-import { headMetadata } from "@/resources/data/metadata";
+import { headMetadata } from "@/contents/data/metadata";
 
 export const metadata: Metadata = {
   ...headMetadata,

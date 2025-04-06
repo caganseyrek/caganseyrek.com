@@ -20,7 +20,7 @@ import {
 
 import { cn } from "@/shared/utils";
 
-import { snippets } from "@/resources/content/snippets";
+import { snippets } from "@/contents/data/snippets";
 
 const SnippetsContent = () => {
   const [searchParams, setSearchParams] = React.useState<string>("");

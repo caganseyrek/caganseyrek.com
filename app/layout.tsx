@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 
 import "@/shared/styles/globals.css";
 
-import { headMetadata, jsonLd } from "@/resources/data/metadata";
+import { headMetadata, jsonLd } from "@/contents/data/metadata";
 
 import { Components as Layout } from "@/types/globals";
 

@@ -19,7 +19,7 @@ import {
 
 import { cn } from "@/shared/utils";
 
-import { mainMenuLinks, socialLinks } from "@/resources/data/links";
+import { mainMenuLinks, socialLinks } from "@/contents/data/links";
 
 const MobileNav = () => {
   const pathname: string = usePathname();

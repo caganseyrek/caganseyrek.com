@@ -12,8 +12,8 @@ import {
   HomepageTechstack,
 } from "@/components/partials/HomepagePartials";
 
-import { headMetadata } from "@/resources/data/metadata";
-import techstack from "@/resources/data/techstack";
+import { headMetadata } from "@/contents/data/metadata";
+import techstack from "@/contents/data/techstack";
 
 export const metadata: Metadata = {
   ...headMetadata,

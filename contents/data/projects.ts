@@ -9,6 +9,13 @@ export const projects: Content.ProjectProps[] = [
     tech: ["spring boot", "next.js", "fastapi", "postgresql"],
   },
   {
+    slug: "WalletTuner",
+    title: "WalletTuner",
+    description: "Flexible personal finance tracking app ",
+    repository: "https://github.com/caganseyrek/WalletTuner",
+    tech: ["express.js", "next.js", "mongodb"],
+  },
+  {
     slug: "tarihsever.com",
     title: "tarihsever.com",
     description: "A history website mainly about colonialism",
@@ -21,12 +28,5 @@ export const projects: Content.ProjectProps[] = [
     description: "TypeScript-based HTTP client wrapper",
     repository: "https://github.com/caganseyrek/EasyRequester",
     tech: ["fetch-api", "typescript"],
-  },
-  {
-    slug: "WalletTuner",
-    title: "WalletTuner",
-    description: "Flexible personal finance tracking app ",
-    repository: "https://github.com/caganseyrek/WalletTuner",
-    tech: ["express.js", "next.js", "mongodb"],
   },
 ];
