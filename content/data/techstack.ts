@@ -1,5 +1,6 @@
 import { DiMsqlServer } from "react-icons/di";
 import {
+  SiDocker,
   SiDotnet,
   SiExpress,
   SiFigma,
@@ -26,6 +27,7 @@ const techstack: Data.TechstackProps[] = [
   { key: "typescript", label: "TypeScript", icon: SiTypescript },
   { key: "sqlserver", label: "SQL Server", icon: DiMsqlServer },
   { key: "postgresql", label: "PostgreSQL", icon: SiPostgresql },
+  { key: "docker", label: "Docker", icon: SiDocker },
   { key: "wslubuntu", label: "Ubuntu (WSL)", icon: SiUbuntu },
   { key: "postman", label: "Postman", icon: SiPostman },
   { key: "git", label: "Git", icon: SiGit },
