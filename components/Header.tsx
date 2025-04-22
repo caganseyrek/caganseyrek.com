@@ -7,12 +7,14 @@ import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/base/button";
 import { Separator } from "@/components/base/separator";
-import MobileNav from "@/components/MobileNav";
+
 import { HeaderLogo, HeaderRightSection, HeaderWrapper } from "@/components/partials/HeaderPartials";
 
-import { cn } from "@/shared/utils";
+import { MobileNav } from "@/components/MobileNav";
 
 import { mainMenuLinks, socialLinks } from "@/content/data/links";
+
+import { cn } from "@/shared/utils";
 
 const Header = () => {
   const pathname: string = usePathname();
@@ -43,4 +45,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export { Header };

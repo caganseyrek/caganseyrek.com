@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Puzzle } from "lucide-react";
 
 import { Button } from "@/components/base/button";
+
 import {
   CustomPageBody,
   CustomPageContainer,

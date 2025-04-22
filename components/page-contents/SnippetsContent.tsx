@@ -7,8 +7,7 @@ import { Info, Trash2 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/base/accordion";
 import { Button } from "@/components/base/button";
 import { Input } from "@/components/base/input";
-import { CodeBlock } from "@/components/code-display/CodeDisplay";
-import CopyButton from "@/components/code-display/CopyButton";
+
 import { ContentSection } from "@/components/partials/ContentPartials";
 import {
   SnippetContainer,
@@ -18,9 +17,12 @@ import {
   SnippetTitle,
 } from "@/components/partials/SnippetPartials";
 
-import { cn } from "@/shared/utils";
+import { CodeBlock } from "@/components/code-display/CodeDisplay";
+import { CopyButton } from "@/components/code-display/CopyButton";
 
 import { snippets } from "@/content/snippets";
+
+import { cn } from "@/shared/utils";
 
 const SnippetsContent = () => {
   const [searchParams, setSearchParams] = React.useState<string>("");
@@ -87,4 +89,4 @@ const SnippetsContent = () => {
   );
 };
 
-export default SnippetsContent;
+export { SnippetsContent };

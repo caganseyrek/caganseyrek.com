@@ -6,14 +6,11 @@ import { Content, Item, Label, Portal, Root, Separator, Trigger } from "@radix-u
 
 import { cn } from "@/shared/utils";
 
-const DropdownMenu = Root;
+const DropdownMenu = ({ ...props }: React.ComponentProps<typeof Root>) => <Root {...props} />;
 
-const DropdownMenuTrigger = Trigger;
+const DropdownMenuTrigger = ({ ...props }: React.ComponentProps<typeof Trigger>) => <Trigger {...props} />;
 
-const DropdownMenuContent = React.forwardRef<
-  React.ComponentRef<typeof Content>,
-  React.ComponentPropsWithoutRef<typeof Content>
->(({ className, sideOffset = 10, ...props }, ref) => (
+const DropdownMenuContent = ({ className, sideOffset = 10, ref, ...props }: React.ComponentProps<typeof Content>) => (
   <Portal>
     <Content
       ref={ref}
@@ -27,15 +24,14 @@ const DropdownMenuContent = React.forwardRef<
       {...props}
     />
   </Portal>
-));
-DropdownMenuContent.displayName = Content.displayName;
+);
 
-const DropdownMenuItem = React.forwardRef<
-  React.ComponentRef<typeof Item>,
-  React.ComponentPropsWithoutRef<typeof Item> & {
-    inset?: boolean;
-  }
->(({ className, inset, ...props }, ref) => (
+const DropdownMenuItem = ({
+  className,
+  inset,
+  ref,
+  ...props
+}: React.ComponentProps<typeof Item> & { inset?: boolean }) => (
   <Item
     ref={ref}
     className={cn(
@@ -47,24 +43,15 @@ const DropdownMenuItem = React.forwardRef<
     )}
     {...props}
   />
-));
-DropdownMenuItem.displayName = Item.displayName;
+);
 
-const DropdownMenuLabel = React.forwardRef<
-  React.ComponentRef<typeof Label>,
-  React.ComponentPropsWithoutRef<typeof Label>
->(({ className, ...props }, ref) => (
+const DropdownMenuLabel = ({ className, ref, ...props }: React.ComponentProps<typeof Label>) => (
   <Label ref={ref} className={cn("p-md pb-sm text-sm font-semibold text-foreground", className)} {...props} />
-));
-DropdownMenuLabel.displayName = Label.displayName;
+);
 
-const DropdownMenuSeparator = React.forwardRef<
-  React.ComponentRef<typeof Separator>,
-  React.ComponentPropsWithoutRef<typeof Separator>
->(({ className, ...props }, ref) => (
+const DropdownMenuSeparator = ({ className, ref, ...props }: React.ComponentProps<typeof Separator>) => (
   <Separator ref={ref} className={cn("my-sm h-px bg-container-background", className)} {...props} />
-));
-DropdownMenuSeparator.displayName = Separator.displayName;
+);
 
 export {
   DropdownMenu,

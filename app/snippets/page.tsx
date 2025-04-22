@@ -2,8 +2,9 @@ import React from "react";
 
 import { Metadata } from "next";
 
-import SnippetsContent from "@/components/page-contents/SnippetsContent";
 import { ContentTitle, ContentWrapper } from "@/components/partials/ContentPartials";
+
+import { SnippetsContent } from "@/components/page-contents/SnippetsContent";
 
 import { headMetadata } from "@/content/data/metadata";
 

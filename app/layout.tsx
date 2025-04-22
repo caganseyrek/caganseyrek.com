@@ -2,13 +2,13 @@ import React from "react";
 
 import { Metadata } from "next";
 
-import Header from "@/components/Header";
+import { Header } from "@/components/Header";
+
+import { headMetadata, jsonLd } from "@/content/data/metadata";
 
 import "@/shared/styles/globals.css";
 
-import { Components as Layout } from "@/types/globals";
-
-import { headMetadata, jsonLd } from "@/content/data/metadata";
+import type { Components as Layout } from "@/types/globals";
 
 export const metadata: Metadata = {
   title: {

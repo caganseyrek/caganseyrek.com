@@ -2,9 +2,9 @@ import { SiGithub, SiLinkedin } from "react-icons/si";
 
 import { Box, CodeXml, Home } from "lucide-react";
 
-import { Data } from "@/types/globals";
+import { coreMetadata } from "@/content/data/metadata";
 
-import { coreMetadata } from "./metadata";
+import type { Data } from "@/types/globals";
 
 export const mainMenuLinks: Data.LinkProps[] = [
   {

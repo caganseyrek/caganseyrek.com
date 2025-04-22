@@ -4,7 +4,7 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import { Components } from "@/types/globals";
+import type { Components } from "@/types/globals";
 
 const CodeBlock = ({ language, code }: Components.CodeBlock.CodeBlockProps) => {
   return (

@@ -4,7 +4,7 @@ import { ContentWrapper } from "@/components/partials/ContentPartials";
 
 import { cn } from "@/shared/utils";
 
-import { Components } from "@/types/globals";
+import type { Components } from "@/types/globals";
 
 const CustomPageContainer = ({ children, className }: Components.BaseWrapperProps) => {
   return (

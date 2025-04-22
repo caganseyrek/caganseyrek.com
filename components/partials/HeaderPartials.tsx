@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { cn } from "@/shared/utils";
 
-import { Components } from "@/types/globals";
+import type { Components } from "@/types/globals";
 
 const HeaderWrapper = ({ children, className }: Components.BaseWrapperProps) => {
   return (

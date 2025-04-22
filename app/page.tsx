@@ -3,6 +3,7 @@ import React from "react";
 import { Metadata } from "next";
 
 import { Separator } from "@/components/base/separator";
+
 import { ContentSection, ContentWrapper } from "@/components/partials/ContentPartials";
 import {
   HomepageContainer,
@@ -13,7 +14,7 @@ import {
 } from "@/components/partials/HomepagePartials";
 
 import { headMetadata } from "@/content/data/metadata";
-import techstack from "@/content/data/techstack";
+import { techstack } from "@/content/data/techstack";
 
 export const metadata: Metadata = {
   ...headMetadata,

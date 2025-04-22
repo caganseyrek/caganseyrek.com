@@ -1,8 +1,8 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
-import { WebSite } from "schema-dts";
+import type { WebSite } from "schema-dts";
 
-import { Data } from "@/types/globals";
+import type { Data } from "@/types/globals";
 
 export const coreMetadata: Data.CoreMetadataProps = {
   site_title: "Çağan Seyrek",

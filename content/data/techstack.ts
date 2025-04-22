@@ -15,7 +15,7 @@ import {
   SiUbuntu,
 } from "react-icons/si";
 
-import { Data } from "@/types/globals";
+import type { Data } from "@/types/globals";
 
 const techstack: Data.TechstackProps[] = [
   { key: "aspdotnetcore", label: "ASP.NET Core", icon: SiDotnet },
@@ -34,4 +34,4 @@ const techstack: Data.TechstackProps[] = [
   { key: "figma", label: "Figma", icon: SiFigma },
 ];
 
-export default techstack;
+export { techstack };

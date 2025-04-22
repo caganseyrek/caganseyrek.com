@@ -17,9 +17,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/base/dropdown-menu";
 
-import { cn } from "@/shared/utils";
-
 import { mainMenuLinks, socialLinks } from "@/content/data/links";
+
+import { cn } from "@/shared/utils";
 
 const MobileNav = () => {
   const pathname: string = usePathname();
@@ -60,4 +60,4 @@ const MobileNav = () => {
   );
 };
 
-export default MobileNav;
+export { MobileNav };

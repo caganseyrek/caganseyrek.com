@@ -1,4 +1,4 @@
-import { Content } from "@/types/globals";
+import type { Content } from "@/types/globals";
 
 export const snippets: Content.Snippets.SnippetProps[] = [
   {

@@ -8,7 +8,7 @@ import { Button } from "@/components/base/button";
 
 import { cn } from "@/shared/utils";
 
-import { Components } from "@/types/globals";
+import type { Components } from "@/types/globals";
 
 const CopyButton = ({ className, code }: Components.CodeBlock.CopyButtonProps) => {
   const [isCopied, setIsCopied] = React.useState<boolean>(false);
@@ -25,4 +25,4 @@ const CopyButton = ({ className, code }: Components.CodeBlock.CopyButtonProps) =
   );
 };
 
-export default CopyButton;
+export { CopyButton };

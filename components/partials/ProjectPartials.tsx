@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { cn } from "@/shared/utils";
 
-import { Components } from "@/types/globals";
+import type { Components } from "@/types/globals";
 
 const ProjectContainer = ({ className, children }: Components.BaseWrapperProps) => {
   return (

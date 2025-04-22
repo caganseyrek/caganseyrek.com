@@ -2,7 +2,7 @@ import React from "react";
 
 import { cn } from "@/shared/utils";
 
-import { Components } from "@/types/globals";
+import type { Components } from "@/types/globals";
 
 const SnippetContainer = ({ children, className }: Components.BaseWrapperProps) => {
   return (
