@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import SnippetsContent from "@/components/page-contents/SnippetsContent";
 import { ContentTitle, ContentWrapper } from "@/components/partials/ContentPartials";
 
-import { headMetadata } from "@/contents/data/metadata";
+import { headMetadata } from "@/content/data/metadata";
 
 export const metadata: Metadata = {
   ...headMetadata,

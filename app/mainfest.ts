@@ -1,6 +1,6 @@
 import { type MetadataRoute } from "next";
 
-import { coreMetadata } from "@/contents/data/metadata";
+import { coreMetadata } from "@/content/data/metadata";
 
 function manifest(): MetadataRoute.Manifest {
   return {

@@ -6,9 +6,9 @@ import Header from "@/components/Header";
 
 import "@/shared/styles/globals.css";
 
-import { headMetadata, jsonLd } from "@/contents/data/metadata";
-
 import { Components as Layout } from "@/types/globals";
+
+import { headMetadata, jsonLd } from "@/content/data/metadata";
 
 export const metadata: Metadata = {
   title: {

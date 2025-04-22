@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-import { coreMetadata } from "@/contents/data/metadata";
+import { coreMetadata } from "@/content/data/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

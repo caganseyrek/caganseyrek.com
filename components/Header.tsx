@@ -12,7 +12,7 @@ import { HeaderLogo, HeaderRightSection, HeaderWrapper } from "@/components/part
 
 import { cn } from "@/shared/utils";
 
-import { mainMenuLinks, socialLinks } from "@/contents/data/links";
+import { mainMenuLinks, socialLinks } from "@/content/data/links";
 
 const Header = () => {
   const pathname: string = usePathname();

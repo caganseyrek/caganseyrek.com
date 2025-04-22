@@ -13,7 +13,7 @@ import {
   CustomPageTitle,
 } from "@/components/partials/CustomPagePartials";
 
-import { headMetadata } from "@/contents/data/metadata";
+import { headMetadata } from "@/content/data/metadata";
 
 export const metadata: Metadata = {
   ...headMetadata,
