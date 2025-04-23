@@ -20,7 +20,7 @@ const CopyButton = ({ className, code }: Components.CodeBlock.CopyButtonProps) =
         setIsCopied(true);
         setTimeout(() => setIsCopied(false), 3000);
       }}>
-      {isCopied ? <Check /> : <Copy />} {isCopied ? "Copied to clipboard!" : "Click to copy the snippet"}
+      {isCopied ? <Check /> : <Copy />} {isCopied ? "Copied to Clipboard!" : "Click to Copy the Snippet"}
     </Button>
   );
 };

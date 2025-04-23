@@ -3,7 +3,6 @@ import {
   SiDocker,
   SiDotnet,
   SiExpress,
-  SiFigma,
   SiGit,
   SiGithub,
   SiNextdotjs,
@@ -12,6 +11,7 @@ import {
   SiPython,
   SiReact,
   SiSpringboot,
+  SiSqlite,
   SiTypescript,
   SiUbuntu,
 } from "react-icons/si";
@@ -25,15 +25,15 @@ const techstack: Data.TechstackProps[] = [
   { key: "react", label: "React", icon: SiReact },
   { key: "nextjs", label: "Next.js", icon: SiNextdotjs },
   { key: "typescript", label: "TypeScript", icon: SiTypescript },
-  { key: "sqlserver", label: "SQL Server", icon: DiMsqlServer },
   { key: "postgresql", label: "PostgreSQL", icon: SiPostgresql },
-  { key: "docker", label: "Docker", icon: SiDocker },
+  { key: "sqlserver", label: "SQL Server", icon: DiMsqlServer },
+  { key: "sqlite", label: "SQLite", icon: SiSqlite },
   { key: "wslubuntu", label: "Ubuntu (WSL)", icon: SiUbuntu },
+  { key: "docker", label: "Docker", icon: SiDocker },
   { key: "postman", label: "Postman", icon: SiPostman },
   { key: "git", label: "Git", icon: SiGit },
   { key: "github", label: "GitHub", icon: SiGithub },
   { key: "python", label: "Python", icon: SiPython },
-  { key: "figma", label: "Figma", icon: SiFigma },
 ];
 
 export { techstack };

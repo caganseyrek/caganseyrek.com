@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Info, Trash2 } from "lucide-react";
+import { Trash2 } from "lucide-react";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/base/accordion";
 import { Button } from "@/components/base/button";
@@ -50,8 +50,8 @@ const SnippetsContent = () => {
             <span className="sr-only">Clear search parameters</span>
           </Button>
         </div>
-        <div className="w-full py-sm px-md text-sm rounded-lg flex flex-row items-center justify-start gap-md border border-container-border text-foreground-muted [&>svg]:size-4 select-none">
-          <Info /> Each snippet has a &quot;Copy to clipboard&quot; button at the bottom.
+        <div className="w-full py-0.5 px-md text-xs text-foreground-muted">
+          Each snippet has a copy button at the bottom.
         </div>
       </div>
       <ContentSection>
