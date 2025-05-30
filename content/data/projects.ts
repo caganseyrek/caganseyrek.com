@@ -9,9 +9,16 @@ export const projects: Content.ProjectProps[] = [
     tech: ["spring boot", "next.js", "fastapi", "postgresql"],
   },
   {
+    slug: "johnson",
+    title: "Johnson",
+    description: "Discovery and proxy service designed for managing server groups",
+    repository: "https://github.com/caganseyrek/Johnson",
+    tech: ["asp.net core", "redis", "rabbitmq", "sqlite"],
+  },
+  {
     slug: "WalletTuner",
     title: "WalletTuner",
-    description: "Flexible personal finance tracking app ",
+    description: "Flexible personal finance tracking app",
     repository: "https://github.com/caganseyrek/WalletTuner",
     tech: ["express.js", "next.js", "mongodb"],
   },
