@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { Loader } from "lucide-react";
 
@@ -13,12 +13,10 @@ export const metadata: Metadata = {
   title: "Loading...",
 };
 
-const LoadingPage = () => {
+export default function LoadingPage() {
   return (
     <CustomPageContainer>
       <Loader className="animate-spin" />
     </CustomPageContainer>
   );
-};
-
-export default LoadingPage;
+}

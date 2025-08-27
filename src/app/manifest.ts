@@ -2,7 +2,7 @@ import { type MetadataRoute } from "next";
 
 import { coreMetadata } from "@/data/metadata";
 
-function manifest(): MetadataRoute.Manifest {
+export default function manifest(): MetadataRoute.Manifest {
   return {
     id: coreMetadata.base_site_url,
     name: coreMetadata.site_title,
@@ -28,5 +28,3 @@ function manifest(): MetadataRoute.Manifest {
     ],
   };
 }
-
-export default manifest;

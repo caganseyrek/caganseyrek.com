@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Puzzle } from "lucide-react";
@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   title: "Error...",
 };
 
-const ErrorPage = () => {
+export default function ErrorPage() {
   return (
     <CustomPageContainer>
       <CustomPageBody>
-        <Puzzle className="text-foreground w-[34px] h-[38px]" />
+        <Puzzle className="text-foreground h-[38px] w-[34px]" />
         <CustomPageTitle>Uhhh...</CustomPageTitle>
         <CustomPageDescription>Looks like some error occurred. I&apos;m really sorry.</CustomPageDescription>
       </CustomPageBody>
@@ -35,6 +35,4 @@ const ErrorPage = () => {
       </Button>
     </CustomPageContainer>
   );
-};
-
-export default ErrorPage;
+}

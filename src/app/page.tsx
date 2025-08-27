@@ -14,14 +14,14 @@ import { FlexBox } from "@/components/flexbox";
 import { coreMetadata } from "@/data/metadata";
 import { projects } from "@/data/projects";
 
-const RootPage = () => {
+export default function RootPage() {
   return (
     <main className="flex flex-row items-start justify-center">
-      <FlexBox className="w-[800px] flex-col flex items-start justify-start gap-5 py-5">
-        <FlexBox className="w-full flex-row flex items-start justify-start gap-5">
+      <FlexBox className="flex w-[800px] flex-col items-start justify-start gap-5 py-5">
+        <FlexBox className="flex w-full flex-row items-start justify-start gap-5">
           <img
             src="/images/portrait_drawing.png"
-            className="w-[150px] h-[150px] rounded-md"
+            className="h-[150px] w-[150px] rounded-md"
             alt="My profile picture"
             title="My profile picture"
             aria-label="My profile picture"
@@ -54,7 +54,7 @@ const RootPage = () => {
         <Separator decorative />
         <FlexBox className="w-full flex-wrap items-start gap-2">
           <FlexBox className="w-full justify-between gap-2">
-            <span className="w-full text-foreground-muted text-foreground! font-medium tracking-tight text-lg">
+            <span className="text-foreground-muted text-foreground! w-full text-lg font-medium tracking-tight">
               Some highlights from my projects
             </span>
             <Button variant="ghost" asChild>
@@ -63,18 +63,18 @@ const RootPage = () => {
               </Link>
             </Button>
           </FlexBox>
-          <FlexBox className="w-full flex-1 gap-1.5 items-stretch">
+          <FlexBox className="w-full flex-1 items-stretch gap-1.5">
             {projects.map((project) => (
               <FlexBox
                 key={project.id}
-                className="w-[calc((100%-12px)/3)] border rounded-md bg-container-bg flex-col flex-1 items-start p-3 gap-1.5">
+                className="bg-container-bg w-[calc((100%-12px)/3)] flex-1 flex-col items-start gap-1.5 rounded-md border p-3">
                 <Link
                   href={project.repository}
                   target="_blank"
-                  className="flex flex-row items-center justify-start gap-2 font-medium tracking-tight text-foreground!">
+                  className="text-foreground! flex flex-row items-center justify-start gap-2 font-medium tracking-tight">
                   {project.title} <ExternalLink className="size-4 shrink-0" />
                 </Link>
-                <div className="text-sm flex-1">{project.description}</div>
+                <div className="flex-1 text-sm">{project.description}</div>
               </FlexBox>
             ))}
           </FlexBox>
@@ -82,6 +82,4 @@ const RootPage = () => {
       </FlexBox>
     </main>
   );
-};
-
-export default RootPage;
+}

@@ -4,15 +4,15 @@ import React from "react";
 
 import { Root } from "@radix-ui/react-separator";
 
-import { cn } from "@/shared/utils";
+import { cn } from "@/lib/utils";
 
-const Separator = ({
+function Separator({
   className,
   orientation = "horizontal",
   decorative = true,
   lighter = false,
   ...props
-}: React.ComponentProps<typeof Root> & { lighter?: boolean }) => {
+}: React.ComponentProps<typeof Root> & { lighter?: boolean }) {
   return (
     <Root
       data-slot="separator"
@@ -27,6 +27,6 @@ const Separator = ({
       {...props}
     />
   );
-};
+}
 
 export { Separator };

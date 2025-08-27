@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Origami } from "lucide-react";
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   title: "Not Found",
 };
 
-const NotFoundPage = () => {
+export default function NotFoundPage() {
   return (
     <CustomPageContainer>
       <CustomPageBody>
-        <Origami className="text-foreground w-[34px] h-[38px]" />
+        <Origami className="text-foreground h-[38px] w-[34px]" />
         <CustomPageTitle>Oops...</CustomPageTitle>
         <CustomPageDescription>Looks like you&apos;ve reached an empty space.</CustomPageDescription>
       </CustomPageBody>
@@ -33,6 +33,4 @@ const NotFoundPage = () => {
       </Button>
     </CustomPageContainer>
   );
-};
-
-export default NotFoundPage;
+}

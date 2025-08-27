@@ -1,15 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
-
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/Inter.ttf");
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("../fonts/JetBrains_Mono.ttf");
-}
 
 :root {
   --background: 0, 0%, 9%;
@@ -99,8 +89,8 @@
 }
 
 * {
-  @apply font-sans border-border scroll-smooth outline-0;
+  @apply border-border scroll-smooth font-sans outline-0;
 }
 body {
-  @apply bg-background text-foreground-darker min-w-[350px] m-0 p-0 min-h-dvh overflow-x-auto;
+  @apply bg-background text-foreground-darker m-0 min-h-dvh min-w-[350px] overflow-x-auto p-0;
 }

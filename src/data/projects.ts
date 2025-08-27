@@ -7,10 +7,10 @@ export interface ProjectProps {
 
 export const projects: ProjectProps[] = [
   {
-    id: "FlightCoordinator",
-    title: "FlightCoordinator",
-    description: "Automated flight manager app",
-    repository: "https://github.com/FlightCoordinator/FlightCoordinator",
+    id: "atlas-izmir",
+    title: "Atlas İzmir",
+    description: "Interactive map of significant and historical places in İzmir ",
+    repository: "https://github.com/caganseyrek/atlas-izmir",
   },
   {
     id: "johnson",
@@ -19,9 +19,9 @@ export const projects: ProjectProps[] = [
     repository: "https://github.com/caganseyrek/Johnson",
   },
   {
-    id: "EasyRequester",
-    title: "EasyRequester",
-    description: "TypeScript-based HTTP client wrapper",
-    repository: "https://github.com/caganseyrek/EasyRequester",
+    id: "FlightCoordinator",
+    title: "FlightCoordinator",
+    description: "Automated flight manager app",
+    repository: "https://github.com/FlightCoordinator/FlightCoordinator",
   },
 ];

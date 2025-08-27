@@ -1,12 +1,14 @@
 import React from "react";
 
-import { Metadata } from "next";
-
-import "@/shared/styles/globals.css";
-
-import type { WrapperProps } from "@/types/globals";
+import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
 
 import { headMetadata, jsonLd } from "@/data/metadata";
+
+import { cn } from "@/lib/utils";
+
+import type { WrapperProps } from "@/globals";
+import "@/globals.css";
 
 export const metadata: Metadata = {
   title: {
@@ -16,9 +18,12 @@ export const metadata: Metadata = {
   ...headMetadata,
 };
 
-const MainLayout = ({ children }: WrapperProps) => {
+const inter = Inter({ subsets: ["latin"] });
+const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
+
+export default function MainLayout({ children }: WrapperProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={cn(inter.className, jetBrainsMono.className)}>
       <head>
         <link rel="icon" href="/images/favicon.png" sizes="any" />
         <script
@@ -31,6 +36,4 @@ const MainLayout = ({ children }: WrapperProps) => {
       <body>{children}</body>
     </html>
   );
-};
-
-export default MainLayout;
+}
