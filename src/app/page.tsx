@@ -34,8 +34,8 @@ export default function RootPage() {
               frameworks, and software architecture patterns.
             </p>
             <p>
-              Beyond coding, I have a <span className="font-bold tracking-tight">deep</span> interest in researching
-              history, I enjoy looking at historical maps, and I&apos;m (kinda) learning bass guitar right now!
+              Beyond coding, I have a deep interest in researching history, I enjoy looking at historical maps, and
+              I&apos;m (kinda) learning bass guitar!
             </p>
             <FlexBox className="gap-1.5">
               <Button className="w-full" asChild>
