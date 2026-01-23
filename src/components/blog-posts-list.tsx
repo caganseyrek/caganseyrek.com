@@ -85,7 +85,7 @@ function BlogPostsList({ allPostMetadatasByYear }: BlogPostsListProps) {
       ) : (
         <FlexBox asColumn className="h-50 w-full justify-center gap-3">
           <CircleOffIcon className="size-8" />
-          <div className="w-60 text-center leading-5">No posts are here yet</div>
+          <div className="w-60 text-center leading-5">No posts here yet</div>
         </FlexBox>
       )}
     </>
