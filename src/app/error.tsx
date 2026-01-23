@@ -7,7 +7,8 @@ import Link from "next/link";
 
 import { Puzzle } from "lucide-react";
 
-import { Button } from "@/components/base-ui/button";
+import { Button } from "@/components/base/button";
+
 import {
   CustomPageBody,
   CustomPageContainer,
@@ -25,8 +26,8 @@ export const metadata: Metadata = {
 export default function ErrorPage() {
   return (
     <CustomPageContainer>
+      <Puzzle className="text-foreground h-9.5 w-8.5" />
       <CustomPageBody>
-        <Puzzle className="text-foreground h-[38px] w-[34px]" />
         <CustomPageTitle>Uhhh...</CustomPageTitle>
         <CustomPageDescription>Looks like some error occurred. I&apos;m really sorry.</CustomPageDescription>
       </CustomPageBody>

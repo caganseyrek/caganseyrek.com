@@ -8,7 +8,7 @@ import type { WrapperProps } from "@/globals";
 
 function CustomPageContainer({ children, className }: WrapperProps) {
   return (
-    <FlexBox className={cn("gap-md p-lg w-[800px] flex-col justify-center pb-[240px]", className)}>{children}</FlexBox>
+    <FlexBox className={cn("p-lg h-120 w-200 flex-col justify-center gap-3 pb-60", className)}>{children}</FlexBox>
   );
 }
 
@@ -21,7 +21,11 @@ function CustomPageDescription({ children, className }: WrapperProps) {
 }
 
 function CustomPageBody({ children, className }: WrapperProps) {
-  return <div className={cn("gap-xs flex flex-col items-center justify-center", className)}>{children}</div>;
+  return (
+    <FlexBox asColumn className={cn("justify-center gap-0", className)}>
+      {children}
+    </FlexBox>
+  );
 }
 
 export { CustomPageContainer, CustomPageTitle, CustomPageDescription, CustomPageBody };

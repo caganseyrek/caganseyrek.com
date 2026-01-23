@@ -2,12 +2,14 @@
 @import "tw-animate-css";
 
 :root {
-  --background: 0, 0%, 9%;
   --foreground: #fafafa;
   --foreground-darker: #bebebe;
 
-  --container-bg: 0, 0%, 12%;
-  --border: 0, 0%, 18%;
+  --gray-0: 0, 0%, 10%;
+  --gray-1: 0, 0%, 15%;
+  --gray-2: 0, 0%, 20%;
+  --gray-3: 0, 0%, 25%;
+  --gray-4: 0, 0%, 30%;
 
   --primary: #fb923c;
   --primary-hover: #fed6a9;
@@ -18,24 +20,28 @@
 @theme {
   --font-*: initial;
   --font-sans:
-    Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
   --font-mono:
-    JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  --color-background: hsl(var(--background));
   --color-foreground: var(--foreground);
   --color-foreground-darker: var(--foreground-darker);
 
-  --color-border: hsl(var(--border));
-  --color-container-bg: hsl(var(--container-bg));
+  --color-gray-0: hsl(var(--gray-0));
+  --color-gray-1: hsl(var(--gray-1));
+  --color-gray-2: hsl(var(--gray-2));
+  --color-gray-3: hsl(var(--gray-3));
+  --color-gray-4: hsl(var(--gray-4));
 
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
 
+  --radius-xl: calc(var(--radius) + 2px);
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+  --radius-xs: calc(var(--radius) - 6px);
 
   --animate-collapsible-up: slideUp 200ms ease-out;
   --animate-collapsible-down: slideDown 200ms ease-out;
@@ -89,8 +95,127 @@
 }
 
 * {
-  @apply border-border scroll-smooth font-sans outline-0;
+  @apply scroll-smooth font-sans outline-0;
 }
 body {
-  @apply bg-background text-foreground-darker m-0 min-h-dvh min-w-[350px] overflow-x-auto p-0;
+  @apply bg-gray-0 text-foreground-darker m-0 min-w-87.5;
+}
+body,
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
+/* Markdown Styles */
+/* Container */
+.markdown {
+  @apply max-w-full;
+}
+
+/* Headings */
+.markdown h1 {
+  @apply block text-3xl font-semibold tracking-tight text-white;
+}
+.markdown h2 {
+  @apply mt-4.5 block text-2xl font-semibold tracking-tight text-white;
+}
+.markdown h3 {
+  @apply mt-4.5 block text-xl font-semibold tracking-tight text-white;
+}
+.markdown h4 {
+  @apply mt-4.5 block text-lg font-semibold tracking-tight text-white;
+}
+.markdown h5 {
+  @apply mt-4.5 block text-base font-semibold tracking-tight text-white;
+}
+
+/* Text */
+.markdown p {
+  @apply my-4.5;
+}
+.markdown strong {
+  @apply font-bold;
+}
+.markdown em {
+  @apply italic;
+}
+.markdown mark {
+  @apply bg-amber-600;
+}
+
+/* Links */
+.markdown a {
+  @apply text-primary!;
+}
+.markdown a:hover {
+  @apply text-primary-hover!;
+}
+.markdown a:visited {
+  @apply text-amber-600!;
+}
+.markdown a:visited:hover {
+  @apply text-primary-hover!;
+}
+
+/* Lists */
+.markdown ul {
+  @apply list-disc pl-7.5;
+}
+.markdown ol {
+  @apply list-decimal pl-7.5;
+}
+.markdown li {
+  @apply marker:text-white;
+}
+.markdown ul ul,
+.markdown ol ol,
+.markdown ul ol,
+.markdown ol ul {
+  @apply pb-1.5;
+}
+
+/* Task lists (GFM) */
+.markdown li.task-list-item {
+  @apply list-none! pl-0!;
+}
+.markdown input[type="checkbox"] {
+  @apply text-primary;
+}
+
+/* Blockquotes */
+.markdown blockquote {
+  @apply bg-gray-1 border-gray-2 my-4.5 block rounded-lg border border-l-6 px-4.5 py-3;
+}
+.markdown blockquote p {
+  @apply my-1.5!;
+}
+
+/* Code */
+.markdown code {
+  @apply bg-gray-1 border-gray-2 inline-block rounded-sm border px-0.5 font-mono text-[15px];
+}
+.markdown pre {
+  @apply my-4.5 w-full;
+}
+.markdown pre code {
+  @apply w-full px-4.5! py-3!;
+}
+
+/* Tables (GFM) */
+.markdown table {
+  @apply border-gray-2 bg-gray-1 my-4.5 w-full border-collapse border;
+}
+.markdown tr:nth-child(odd) {
+  @apply bg-gray-2;
+}
+.markdown th {
+  @apply bg-gray-1 text-white;
+}
+.markdown th,
+.markdown td {
+  @apply px-3 py-1.5;
+}
+
+/* Horizontal rule */
+.markdown hr {
+  @apply border-gray-2 my-4.5 rounded-xl;
 }

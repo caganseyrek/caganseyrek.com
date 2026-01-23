@@ -5,7 +5,8 @@ import Link from "next/link";
 
 import { Origami } from "lucide-react";
 
-import { Button } from "@/components/base-ui/button";
+import { Button } from "@/components/base/button";
+
 import {
   CustomPageBody,
   CustomPageContainer,
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
 export default function NotFoundPage() {
   return (
     <CustomPageContainer>
+      <Origami className="text-foreground h-9.5 w-8.5" />
       <CustomPageBody>
-        <Origami className="text-foreground h-[38px] w-[34px]" />
         <CustomPageTitle>Oops...</CustomPageTitle>
         <CustomPageDescription>Looks like you&apos;ve reached an empty space.</CustomPageDescription>
       </CustomPageBody>

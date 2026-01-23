@@ -10,18 +10,16 @@ function Separator({
   className,
   orientation = "horizontal",
   decorative = true,
-  lighter = false,
   ...props
-}: React.ComponentProps<typeof Root> & { lighter?: boolean }) {
+}: React.ComponentProps<typeof Root>) {
   return (
     <Root
       data-slot="separator"
       decorative={decorative}
       orientation={orientation}
       className={cn(
-        "shrink-0 rounded-lg",
-        lighter ? "bg-border-lighter/55" : "bg-border",
-        orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
+        "bg-gray-2 shrink-0 rounded-lg",
+        orientation === "horizontal" ? "h-px w-full" : "h-full w-px",
         className,
       )}
       {...props}
