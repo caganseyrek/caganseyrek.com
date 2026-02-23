@@ -17,15 +17,15 @@ import { Button } from "@/components/base/button";
 import { PostLoader } from "@/lib/post-loader";
 
 export async function generateStaticParams() {
-  return PostLoader.getAllPostSlugs().map((slug) => ({ slug: slug }));
+  return PostLoader.getAllPostSlugs().map((slug) => ({ postSlug: slug }));
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ postSlug: string }> }) {
-  const awaitedPostSlug = (await params).postSlug;
-  const post = PostLoader.getPostBySlug(awaitedPostSlug);
+  const { postSlug: awaitedPostSlug } = await params;
 
+  const post = PostLoader.getPostBySlug(awaitedPostSlug);
   if (!post) {
-    return notFound();
+    notFound();
   }
 
   const processedPostContent = await unified()
@@ -41,7 +41,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ postS
     <>
       <Button asChild>
         <Link href="/blog">
-          <ArrowLeftIcon /> Back to Blog
+          <ArrowLeftIcon /> Blog&apos;a geri dön
         </Link>
       </Button>
       <div

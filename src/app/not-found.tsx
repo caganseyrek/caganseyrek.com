@@ -6,31 +6,32 @@ import Link from "next/link";
 import { Origami } from "lucide-react";
 
 import { Button } from "@/components/base/button";
-
 import {
   CustomPageBody,
   CustomPageContainer,
   CustomPageDescription,
   CustomPageTitle,
-} from "@/components/page-partials";
+} from "@/components/base/page-partials";
 
 import { headMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
-  ...headMetadata,
-  title: "Not Found",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    ...headMetadata,
+    title: "Sayfa Bulunamadı...",
+  };
+}
 
-export default function NotFoundPage() {
+export default async function NotFoundPage() {
   return (
     <CustomPageContainer>
       <Origami className="text-foreground h-9.5 w-8.5" />
       <CustomPageBody>
-        <CustomPageTitle>Oops...</CustomPageTitle>
-        <CustomPageDescription>Looks like you&apos;ve reached an empty space.</CustomPageDescription>
+        <CustomPageTitle>404</CustomPageTitle>
+        <CustomPageDescription>Sitede yer almayan bir yere ulaştık.</CustomPageDescription>
       </CustomPageBody>
       <Button asChild>
-        <Link href={"/"}>Return to Homepage</Link>
+        <Link href={"/"}>Ana sayfaya dön</Link>
       </Button>
     </CustomPageContainer>
   );

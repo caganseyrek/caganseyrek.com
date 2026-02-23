@@ -8,31 +8,32 @@ import Link from "next/link";
 import { Puzzle } from "lucide-react";
 
 import { Button } from "@/components/base/button";
-
 import {
   CustomPageBody,
   CustomPageContainer,
   CustomPageDescription,
   CustomPageTitle,
-} from "@/components/page-partials";
+} from "@/components/base/page-partials";
 
 import { headMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = {
-  ...headMetadata,
-  title: "Error...",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    ...headMetadata,
+    title: "Hata...",
+  };
+}
 
 export default function ErrorPage() {
   return (
     <CustomPageContainer>
       <Puzzle className="text-foreground h-9.5 w-8.5" />
       <CustomPageBody>
-        <CustomPageTitle>Uhhh...</CustomPageTitle>
-        <CustomPageDescription>Looks like some error occurred. I&apos;m really sorry.</CustomPageDescription>
+        <CustomPageTitle>Hmmm...</CustomPageTitle>
+        <CustomPageDescription>Bir hata olmuş gibi görünüyor. Çok üzgünüm.</CustomPageDescription>
       </CustomPageBody>
       <Button asChild>
-        <Link href={"/"}>Return to Homepage</Link>
+        <Link href={"/"}>Ana sayfaya dön</Link>
       </Button>
     </CustomPageContainer>
   );

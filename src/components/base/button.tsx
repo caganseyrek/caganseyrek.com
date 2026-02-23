@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import { Slot } from "radix-ui";
 
 import { cn } from "@/lib/utils";
 
@@ -15,6 +15,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-gray-1 text-foreground-darker hover:text-foreground",
         containerButton:
           "rounded-sm! border border-gray-3 bg-gray-2 text-foreground-darker hover:bg-gray-3 hover:border-gray-4 hover:text-foreground",
+        dropdownItemButton:
+          "rounded-sm! border border-gray-4 bg-gray-3 text-foreground-darker hover:bg-gray-4 hover:border-gray-5 hover:text-foreground",
       },
       size: {
         default: "h-8.5 min-h-8.5 px-2.5 py-1.5",
@@ -35,7 +37,7 @@ function Button({
   asChild = false,
   ...props
 }: React.ComponentProps<"button"> & VariantProps<typeof buttonVariants> & { asChild?: boolean }) {
-  const Component = asChild ? Slot : "button";
+  const Component = asChild ? Slot.Root : "button";
   return <Component data-slot="button" className={cn(buttonVariants({ variant, size, className }))} {...props} />;
 }
 

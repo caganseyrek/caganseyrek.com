@@ -4,27 +4,21 @@ import { coreMetadata } from "@/data/metadata";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    id: coreMetadata.base_site_url,
-    name: coreMetadata.site_title,
-    short_name: coreMetadata.site_title,
+    id: coreMetadata.siteBaseUrl,
+    name: coreMetadata.name,
+    short_name: coreMetadata.name,
     description: coreMetadata.description,
-    scope: coreMetadata.base_site_url,
+    scope: coreMetadata.siteBaseUrl,
     start_url: "/",
     display: "standalone",
     orientation: "natural",
-    background_color: "#262626",
-    theme_color: "#262626",
+    background_color: "#1A1A1A",
+    theme_color: "#1A1A1A",
     icons: [
-      {
-        src: "/images/favicon.png",
-        sizes: "27x27",
-        type: "image/x-icon",
-      },
-      {
-        src: "/images/favicon.png",
-        sizes: "27x27",
-        type: "image/png",
-      },
+      { src: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { src: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+      { src: "/icon-maskable-192x192.png", sizes: "192x192", type: "image/png", purpose: "maskable" },
+      { src: "/icon-maskable-512x512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
   };
 }

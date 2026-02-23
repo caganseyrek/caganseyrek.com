@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { CircleOffIcon } from "lucide-react";
 
-import { FlexBox } from "@/components/flexbox";
+import { FlexBox } from "@/components/base/flexbox";
 
 import { PostsByYearProps } from "@/globals";
 
@@ -47,7 +47,7 @@ function BlogPostsList({ allPostMetadatasByYear }: BlogPostsListProps) {
         <input
           type="search"
           className="border-gray-2 bg-gray-1 text-foreground-darker h-8.5 min-h-8.5 gap-2 rounded-lg border px-2.5 py-1.5 text-sm"
-          placeholder="Search posts..."
+          placeholder="Yazı ara..."
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
@@ -68,7 +68,7 @@ function BlogPostsList({ allPostMetadatasByYear }: BlogPostsListProps) {
                       <span className="max-w-125 truncate">{post.title}</span>
                       <span className="text-nowrap">
                         {publishedAtDate.getDate().toString().padStart(2, "0")}{" "}
-                        {publishedAtDate.toLocaleString("en-US", { month: "short" })}
+                        {publishedAtDate.toLocaleString("tr-TR", { month: "short" })}
                       </span>
                     </Link>
                   </FlexBox>
@@ -80,12 +80,12 @@ function BlogPostsList({ allPostMetadatasByYear }: BlogPostsListProps) {
       ) : query ? (
         <FlexBox asColumn className="h-50 w-full justify-center gap-3">
           <CircleOffIcon className="size-8" />
-          <div className="w-60 text-center leading-5">We couldn’t find any posts matching your search</div>
+          <div className="w-60 text-center leading-5">Aramanız ile eşleşen hiçbir yazı bulamadık</div>
         </FlexBox>
       ) : (
         <FlexBox asColumn className="h-50 w-full justify-center gap-3">
           <CircleOffIcon className="size-8" />
-          <div className="w-60 text-center leading-5">No posts here yet</div>
+          <div className="w-60 text-center leading-5">Burada hiç yazı yok</div>
         </FlexBox>
       )}
     </>

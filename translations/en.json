@@ -1,0 +1,85 @@
+{
+  "global": {
+    "menuItems": {
+      "homePageLinkLabel": "Home",
+      "servicesPageLinkLabel": "Services",
+      "blogPageLinkLabel": "Blog"
+    },
+    "localeSwitcher": {
+      "srLabel": "Change the website's language"
+    }
+  },
+  "loadingPage": {
+    "headTitle": "Loading..."
+  },
+  "errorPage": {
+    "headTitle": "Error...",
+    "title": "Uhhh...",
+    "description": "Looks like some error occurred. I'm really sorry",
+    "returnToHomePage": "Return to homepage"
+  },
+  "notFoundPage": {
+    "headTitle": "Page Not Found...",
+    "title": "Oops...",
+    "description": "Looks like you've reached an empty space.",
+    "returnToHomePage": "Return to homepage"
+  },
+  "homePage": {
+    "introSection": {
+      "title": "Hey, I'm Çağan!",
+      "paragraphs": {
+        "first": "I'm a computer and software engineer",
+        "second": "I do full-stack development and create open-source projects. I also enjoy exploring different languages, frameworks, and software architecture patterns.",
+        "third": "Beyond coding, I have a deep interest in researching history and I enjoy looking at historical maps."
+      }
+    },
+    "highlightedProjectsSection": {
+      "title": "Featured Project",
+      "seeMoreLinkLabel": "View more on GitHub",
+      "sourceLinkLabel": "Source",
+      "websiteLinkLabel": "Website",
+      "projects": {
+        "first": {
+          "title": "Uzun Mühendislik & Proje",
+          "description": "Website of Civil Engineering Office based in Gelibolu"
+        },
+        "second": {
+          "title": "İzmir Atlası",
+          "description": "An interactive map showing the important, historical, and cultural sites in İzmir"
+        },
+        "third": {
+          "title": "Johnson",
+          "description": "Discovery and proxy service for managing server groups"
+        }
+      }
+    }
+  },
+  "servicesPage": {
+    "headTitle": "Services",
+    "title": "Services",
+    "firstCard": {
+      "title": "Custom Web Applications",
+      "description": "I build tailored web applications based on specific needs. Instead of relying on heavy templates, I focus on practical solutions that align with the project's goals."
+    },
+    "secondCard": {
+      "title": "Backend & API Development",
+      "description": "I design and build reliable backend systems and APIs for web and mobile applications, with clean and maintainable server-side code. I focus on creating solid foundations that can grow with the project."
+    },
+    "thirdCard": {
+      "title": "Database Design & Data Modeling",
+      "description": "I design structured database schemas tailored to a project's needs. The goal is to support long-term growth while avoiding unnecessary complexity and technical debt."
+    },
+    "collaborationTexts": {
+      "wannaCollaborate": "Interested in working together?",
+      "reachOut": "You can reach out to me on <a>LinkedIn</a> and we can discuss your idea."
+    }
+  },
+  "blogPage": {
+    "headTitle": "Blog",
+    "title": "Blog",
+    "searchInputPlaceholder": "Search posts...",
+    "noPostsExistPlaceholder": "No posts here yet",
+    "noPostsFoundPlaceholder": "We couldn’t find any posts matching your search",
+    "backToBlogLinkLabel": "Back to blog"
+  }
+}

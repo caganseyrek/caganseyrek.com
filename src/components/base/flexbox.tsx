@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Slot } from "@radix-ui/react-slot";
+import { Slot } from "radix-ui";
 
 import { cn } from "@/lib/utils";
 
@@ -13,7 +13,7 @@ function FlexBox({
   asChild = false,
   style,
 }: WrapperProps & { style?: React.CSSProperties; asColumn?: true; asChild?: boolean }) {
-  const Component = asChild ? Slot : "div";
+  const Component = asChild ? Slot.Root : "div";
   return (
     <Component
       style={style}

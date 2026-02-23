@@ -18,6 +18,6 @@ interface PostMetadataProps {
   keywords: string[];
 }
 
-type BlogPostsByYearProps = Record<string, PostMetadataProps[]>;
+type PostsByYearProps = Record<string, PostMetadataProps[]>;
 
-export type { WrapperProps, IconType, PostMetadataProps, BlogPostsByYearProps as PostsByYearProps };
+export type { WrapperProps, IconType, PostMetadataProps, PostsByYearProps };

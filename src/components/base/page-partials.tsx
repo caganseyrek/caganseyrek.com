@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FlexBox } from "@/components/flexbox";
+import { FlexBox } from "@/components/base/flexbox";
 
 import { cn } from "@/lib/utils";
 

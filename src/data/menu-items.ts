@@ -1,4 +1,4 @@
-import { FileTextIcon, HomeIcon } from "lucide-react";
+import { BriefcaseBusinessIcon, FileTextIcon, HomeIcon } from "lucide-react";
 
 import type { IconType } from "@/globals";
 
@@ -12,9 +12,15 @@ interface MenuItemProps {
 const menuItems: MenuItemProps[] = [
   {
     key: "homepage",
-    label: "Home",
+    label: "Ana Sayfa",
     href: "/",
     icon: HomeIcon,
+  },
+  {
+    key: "services",
+    label: "Hizmetler",
+    href: "/hizmetler",
+    icon: BriefcaseBusinessIcon,
   },
   {
     key: "blog",
@@ -24,4 +30,4 @@ const menuItems: MenuItemProps[] = [
   },
 ];
 
-export { menuItems };
+export { type MenuItemProps, menuItems };
