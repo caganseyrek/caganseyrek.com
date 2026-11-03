@@ -1,5 +1,9 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-VariableFont_opsz\,wght.ttf");
+}
 
 :root {
   --foreground: #fafafa;
@@ -103,119 +107,4 @@ body {
 body,
 html {
   scrollbar-gutter: stable both-edges;
-}
-
-/* Markdown Styles */
-/* Container */
-.markdown {
-  @apply max-w-full;
-}
-
-/* Headings */
-.markdown h1 {
-  @apply block text-3xl font-semibold tracking-tight text-white;
-}
-.markdown h2 {
-  @apply mt-4.5 block text-2xl font-semibold tracking-tight text-white;
-}
-.markdown h3 {
-  @apply mt-4.5 block text-xl font-semibold tracking-tight text-white;
-}
-.markdown h4 {
-  @apply mt-4.5 block text-lg font-semibold tracking-tight text-white;
-}
-.markdown h5 {
-  @apply mt-4.5 block text-base font-semibold tracking-tight text-white;
-}
-
-/* Text */
-.markdown p {
-  @apply my-4.5;
-}
-.markdown strong {
-  @apply font-bold;
-}
-.markdown em {
-  @apply italic;
-}
-.markdown mark {
-  @apply bg-amber-600;
-}
-
-/* Links */
-.markdown a {
-  @apply text-primary!;
-}
-.markdown a:hover {
-  @apply text-primary-hover!;
-}
-.markdown a:visited {
-  @apply text-amber-600!;
-}
-.markdown a:visited:hover {
-  @apply text-primary-hover!;
-}
-
-/* Lists */
-.markdown ul {
-  @apply list-disc pl-7.5;
-}
-.markdown ol {
-  @apply list-decimal pl-7.5;
-}
-.markdown li {
-  @apply marker:text-white;
-}
-.markdown ul ul,
-.markdown ol ol,
-.markdown ul ol,
-.markdown ol ul {
-  @apply pb-1.5;
-}
-
-/* Task lists (GFM) */
-.markdown li.task-list-item {
-  @apply list-none! pl-0!;
-}
-.markdown input[type="checkbox"] {
-  @apply text-primary;
-}
-
-/* Blockquotes */
-.markdown blockquote {
-  @apply bg-gray-1 border-gray-2 my-4.5 block rounded-lg border border-l-6 px-4.5 py-3;
-}
-.markdown blockquote p {
-  @apply my-1.5!;
-}
-
-/* Code */
-.markdown code {
-  @apply bg-gray-1 border-gray-2 inline-block rounded-sm border px-0.5 font-mono text-[15px];
-}
-.markdown pre {
-  @apply my-4.5 w-full;
-}
-.markdown pre code {
-  @apply w-full px-4.5! py-3!;
-}
-
-/* Tables (GFM) */
-.markdown table {
-  @apply border-gray-2 bg-gray-1 my-4.5 w-full border-collapse border;
-}
-.markdown tr:nth-child(odd) {
-  @apply bg-gray-2;
-}
-.markdown th {
-  @apply bg-gray-1 text-white;
-}
-.markdown th,
-.markdown td {
-  @apply px-3 py-1.5;
-}
-
-/* Horizontal rule */
-.markdown hr {
-  @apply border-gray-2 my-4.5 rounded-xl;
 }

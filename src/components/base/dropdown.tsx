@@ -1,28 +1,26 @@
-"use client";
+import type { ComponentProps } from "react";
 
-import React from "react";
+import { Content, Item, Portal, Root, Trigger } from "radix-ui/dropdown-menu";
 
-import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui";
+import { cn } from "@/utils";
 
-import { cn } from "@/lib/utils";
-
-function DropdownMenu({ ...props }: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {
-  return <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
+export function DropdownMenu({ ...props }: ComponentProps<typeof Root>) {
+  return <Root data-slot="dropdown-menu" {...props} />;
 }
 
-function DropdownMenuTrigger({ ...props }: React.ComponentProps<typeof DropdownMenuPrimitive.Trigger>) {
-  return <DropdownMenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />;
+export function DropdownMenuTrigger({ ...props }: ComponentProps<typeof Trigger>) {
+  return <Trigger data-slot="dropdown-menu-trigger" {...props} />;
 }
 
-function DropdownMenuContent({
+export function DropdownMenuContent({
   className,
   align = "start",
   sideOffset = 4,
   ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.Content>) {
+}: ComponentProps<typeof Content>) {
   return (
-    <DropdownMenuPrimitive.Portal>
-      <DropdownMenuPrimitive.Content
+    <Portal>
+      <Content
         data-slot="dropdown-menu-content"
         sideOffset={sideOffset}
         align={align}
@@ -39,21 +37,21 @@ function DropdownMenuContent({
         )}
         {...props}
       />
-    </DropdownMenuPrimitive.Portal>
+    </Portal>
   );
 }
 
-function DropdownMenuItem({
+export function DropdownMenuItem({
   className,
   inset,
   variant = "default",
   ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.Item> & {
+}: ComponentProps<typeof Item> & {
   inset?: boolean;
   variant?: "default" | "destructive";
 }) {
   return (
-    <DropdownMenuPrimitive.Item
+    <Item
       data-slot="dropdown-menu-item"
       data-inset={inset}
       data-variant={variant}
@@ -67,5 +65,3 @@ function DropdownMenuItem({
     />
   );
 }
-
-export { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem };

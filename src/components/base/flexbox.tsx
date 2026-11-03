@@ -1,19 +1,19 @@
-import React from "react";
+import type { CSSProperties, ReactNode } from "react";
 
-import { Slot } from "radix-ui";
+import { Root } from "radix-ui/slot";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils";
 
-import type { WrapperProps } from "@/globals";
+interface FlexBoxProps {
+  children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+  asColumn?: true;
+  asChild?: boolean;
+}
 
-function FlexBox({
-  children,
-  className,
-  asColumn,
-  asChild = false,
-  style,
-}: WrapperProps & { style?: React.CSSProperties; asColumn?: true; asChild?: boolean }) {
-  const Component = asChild ? Slot.Root : "div";
+export function FlexBox({ children, className, asColumn, asChild = false, style }: FlexBoxProps) {
+  const Component = asChild ? Root : "div";
   return (
     <Component
       style={style}
@@ -22,5 +22,3 @@ function FlexBox({
     </Component>
   );
 }
-
-export { FlexBox };

@@ -8,7 +8,7 @@ interface ProjectProps {
     | { repository: string; website: string };
 }
 
-const highlightedProjects: ProjectProps[] = [
+export const projects: ProjectProps[] = [
   {
     key: "1",
     title: "Uzun Mühendislik & Proje",
@@ -34,6 +34,28 @@ const highlightedProjects: ProjectProps[] = [
       repository: "https://github.com/caganseyrek/Johnson",
     },
   },
+  // {
+  //   key: "4",
+  //   title: "",
+  //   description: "",
+  //   links: {
+  //     repository: "",
+  //   },
+  // },
+  // {
+  //   key: "5",
+  //   title: "",
+  //   description: "",
+  //   links: {
+  //     repository: "",
+  //   },
+  // },
+  // {
+  //   key: "6",
+  //   title: "",
+  //   description: "",
+  //   links: {
+  //     repository: "",
+  //   },
+  // },
 ];
-
-export { type ProjectProps, highlightedProjects };
